@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Revize Edit Forms Instructions</title>
+  
+  <link rel="stylesheet" href="../../plugins/_editforms_/plugins/bootstrap/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="instructions.css"> 
+  
+  <link rel="shortcut icon" href="_assets_/images/favicon.ico">
+
+  <!-- Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body id="msg-editform">
+
+
+		<div class="rz-header clearfix">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12 text-center">
+						<div class="rz-logo">
+					    <img src="../../plugins/_editforms_/images/logo-dark.png" alt="Revize CMS">
+				    </div>
+			    </div><!-- /.col-md-12 -->
+
+		    </div><!-- /.row -->
+	    </div><!-- /.container-fluid -->
+		</div><!-- /.rz-header -->
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<div class="alert alert-info alert">
+			    <p>Please read everything here every time you enable a website. This will be changing as we add edit forms to our list
+			    </p>
+		    </div><!-- alert -->			
+			
+				<h1 class="page-header">Revize Edit Forms Instructions</h1>	
+				<h2 class="page-header">Intro</h2>
+				<p>Going forward every HTML that gets sent to be enabled will have a folder called editforms and in this form you will see all the editforms need for any size site</p>
+				<p>Each form refers to a “plugins/_editforms_” folder at the the root of the server there we have all the scripts plugins and includes needed for each form</p>
+				<p>Please never modify the include files at the root of the server </p>
+				<p>If you need an edit form that is not in the list or please ask Derek or Samir to create it and one of them will give you the html</p>
+				<p>If you are not sure of something please ask Derek or Samir</p>
+				<p>Extra fields have been added to all forms. Anything not need just comment it out</p>
+				<p>Never have edit forms open in popup windows please</p>
+		
+				<h2 class="page-header">Scripts</h2>
+				<div class="alert alert-info">We have included the setup script in the include files so there is no need to add them </div>
+
+				<h4>In head:</h4>
+					Editform: <pre><%@ include file="/util/setup_editform_before_endhead.jsp" %></pre>
+					Editlist: <pre><%@ include file="/util/setup_editlist_before_endhead.jsp" %></pre>
+			
+					<h4>Start Body (before form):</h4>
+					Editform: <pre><%@ include file="/util/setup_editform_javascript.jsp" %></pre>
+					Editlist: <pre><%@ include file="/util/setup_editlist_javascript.jsp" %></pre>
+			
+					<h4>End Body (after form) :</h4>
+					Editform: <pre><%@ include file="/util/setup_editform_before_endbody.jsp" %></pre>
+					Editlist: <pre><%@ include file="/util/setup_editlist_before_endbody.jsp" %></pre>
+		
+		<p>
+		<h4>The folling have also been added</h4>
+		
+		<p>you will see these in all edit forms and edit lists</p>
+
+		<div class="alert alert-info">
+			<p>You will need to put in all the options for the scripts below</p>
+		</div>
+		<b>For Edit Forms</b>
+		<pre>
+<%-- #RevizeProperties USE REVIZE MENU (DOCUMENT PROPERTIES) TO EDIT DATA BELOW:
+status=new
+options=
+server=localhost:80
+projectName=
+label=
+location=
+version=
+docType=editpage
+subType=form
+moduleName=
+fieldName=
+channels=|
+description=Image Link Editform
+--%><%-- #BeginRZ-PageHeader --%><%@
+page language="java" %><%
+String rzmodule = "imagelink";%><%@
+include file="/util/setup_editform_header.jsp"
+%><%-- #EndRZ-PageHeader --%>
+</pre>
+
+		<b>For Edit Lists</b>
+<pre>
+<%-- #RevizeProperties USE REVIZE MENU (DOCUMENT PROPERTIES) TO EDIT DATA BELOW:
+status=new
+options=
+server=localhost:80
+projectName=
+label=
+location=
+version=
+docType=editpage
+subType=list
+moduleName=
+fieldName=
+channels=|
+description=Image Link Editlist
+--%><%-- #BeginRZ-PageHeader --%><%@
+page language="java" %><%@
+include file="/util/setup_editlist_header.jsp"
+%><%-- #EndRZ-PageHeader --%>		
+</pre>
+
+		
+				<h2 class="page-header">For Rich Text Editors</h2>		
+				<p>In the html you will find comments for where to replace a textarea with Revize Text Editor</p>
+				<p>You will see something like this <i>replace with revize text editor and keep...</i></p>
+				<p>Do not remove id's or classes on anything</p>
+				
+				<h2 class="page-header">Plugins</h2>
+				<p>We have used a few plugins for a great user experience</p>
+				<p><a href="http://noelboss.github.io/featherlight/">The ultra slim lightbox</a></p>
+				<p><a href="http://t1m0n.name/air-datepicker/docs/">Air Date picker</a></p>
+				<p><a href="https://github.com/RobinHerbots/jquery.inputmask">inputmask</a></p>
+				<p><a href="http://getbootstrap.com/">bootstrap</a></p>
+				<p><a href="http://bootstraptour.com/">Bootstrap Tour</a></p>
+				
+				<h2 class="page-header">List of editforms</h2>
+				<p>
+				<a href="../editforms/agenda-minutes-detail-editform.jsp">agenda minutes detail editform</a><br>
+				<a href="../editforms/agendas-minutes-category-editform.jsp">agendas minutes category editform</a><br>
+				<a href="../editforms/alert-editform.jsp">alert editform</a><br>
+				<a href="../editforms/banner-editform.jsp">banner editform</a><br>
+				<a href="../editforms/banner-editlist.jsp">banner editlist</a><br>
+				<a href="../editforms/business-directory-editform.jsp">business directory editform</a><br>
+				<a href="../editforms/business-directory-editlist.jsp">business directory editlist</a><br>
+				<a href="../editforms/business-type-editform.jsp">business type editform</a><br>
+				<a href="../editforms/business-type-editlist.jsp">business type editlist</a><br>
+				<a href="../editforms/copyright-editform.jsp">copyright editform</a><br>
+				<a href="../editforms/footer-editform.jsp">footer editform</a><br>
+				<a href="../editforms/freeform-editform.jsp">freeform editform</a><br>
+				<a href="../editforms/freeform-fullwidth-editform.jsp">freeform fullwidth editform</a><br>
+				<a href="../editforms/home-slider-editform.jsp">home slider editform</a><br>
+				<a href="../editforms/home-slider-editlist.jsp">home slider editlist</a><br>
+				<a href="../editforms/instructions.html">Instructions Page</a><br>
+				<a href="../editforms/jobslist-editform.jsp">jobslist editform</a><br>
+				<a href="../editforms/leftnav-title-editform.jsp">leftnav title editform</a><br>
+				<a href="../editforms/metadata-editform.jsp">metadata editform</a><br>
+				<a href="../editforms/msg-editform.jsp">msg editform</a><br>
+				<a href="../editforms/news-editform.jsp">news editform</a><br>
+				<a href="../editforms/quick-link-editform.jsp">quick link editform</a><br>
+				<a href="../editforms/quick-links-editlist.jsp">quick links editlist</a><br>
+				<a href="../editforms/social-editform.jsp">social editform</a><br>
+				<a href="../editforms/staff-directory-editform.jsp">staff directory editform</a><br>
+				<a href="../editforms/staff-directory-editlist.jsp">staff directory editlist</a><br>
+				</p>
+				
+				<div class="alert alert-info alert">
+			    <p>			    
+			    Some templates can be used mulipule times on a single site. Just duplicate the editform and rename it. If you are not sure which one would be appropriate for use please ask Derek or Samir 
+			    </p>
+		    </div><!-- alert -->
+				
+			</div>
+		</div>
+	</div><!-- /.container -->
+	
+</body>
+</html>
