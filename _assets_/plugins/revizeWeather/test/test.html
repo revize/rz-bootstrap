@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test weather plugin</title>
+	<style type="text/css">
+		@font-face{font-family:'weather';src:url('../../../fonts/weather/artill_clean_icons-webfont.eot');src:url('../../../fonts/weather/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),url('../../../fonts/weather/artill_clean_icons-webfont.woff') format('woff'),url('../../../fonts/weather/artill_clean_icons-webfont.ttf') format('truetype'),url('../../../fonts/weather/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');font-weight:normal;font-style:normal}
+		.weather i{font-family:'weather'}
+		.weather .icon-0:before{content:":"}.weather .icon-1:before{content:"p"}.weather .icon-2:before{content:"S"}.weather .icon-3:before{content:"Q"}.weather .icon-4:before{content:"S"}.weather .icon-5:before{content:"W"}.weather .icon-6:before{content:"W"}.weather .icon-7:before{content:"W"}.weather .icon-8:before{content:"W"}.weather .icon-9:before{content:"I"}.weather .icon-10:before{content:"W"}.weather .icon-11:before{content:"I"}.weather .icon-12:before{content:"I"}.weather .icon-13:before{content:"I"}.weather .icon-14:before{content:"I"}.weather .icon-15:before{content:"W"}.weather .icon-16:before{content:"I"}.weather .icon-17:before{content:"W"}.weather .icon-18:before{content:"U"}.weather .icon-19:before{content:"Z"}.weather .icon-20:before{content:"Z"}.weather .icon-21:before{content:"Z"}.weather .icon-22:before{content:"Z"}.weather .icon-23:before{content:"Z"}.weather .icon-24:before{content:"E"}.weather .icon-25:before{content:"E"}.weather .icon-26:before{content:"3"}.weather .icon-27:before{content:"a"}.weather .icon-28:before{content:"A"}.weather .icon-29:before{content:"a"}.weather .icon-30:before{content:"A"}.weather .icon-31:before{content:"6"}.weather .icon-32:before{content:"1"}.weather .icon-33:before{content:"6"}.weather .icon-34:before{content:"1"}.weather .icon-35:before{content:"W"}.weather .icon-36:before{content:"1"}.weather .icon-37:before{content:"S"}.weather .icon-38:before{content:"S"}.weather .icon-39:before{content:"S"}.weather .icon-40:before{content:"M"}.weather .icon-41:before{content:"W"}.weather .icon-42:before{content:"I"}.weather .icon-43:before{content:"W"}.weather .icon-44:before{content:"a"}.weather .icon-45:before{content:"S"}.weather .icon-46:before{content:"U"}.weather .icon-47:before{content:"S"}
+	</style>
+</head>
+<body>
+	To see all data options check the console output
+	<div class="weather"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="../js/revizeWeather.js"></script>
+	<script>
+		console.log(typeof $.revizeWeather);
+		$.fn.revizeWeather({
+			zip: '48326',
+			pluginLocation: '../main.php',
+			success: function(weather) {
+				var date = new Date( parseInt(weather.dt + '000') ); // dt is unix timestamp
+				date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+				var html = '<h4>'+date+'</h4>';
+				html += '<div class="weather-wrap clearfix"><p class="section"><span>'+weather.temp+'&deg;</span></p>';
+				html += '<p class="section"><i class="'+weather.icon+'"></i></p>';
+				html += '<p class="section">'+weather.forecast+'</p></div>';
+				$('.weather').html(html);
+			},
+			error: function(error) {
+				$('.weather').html(error).hide();
+			}
+		});		
+	</script>
+</body>
+</html>

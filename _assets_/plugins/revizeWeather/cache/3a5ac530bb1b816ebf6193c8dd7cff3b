@@ -1,0 +1,2 @@
+1487602910
+{"coord":{"lon":-83.23,"lat":42.69},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":39.84,"pressure":1007.22,"humidity":81,"temp_min":39.84,"temp_max":39.84,"sea_level":1040.11,"grnd_level":1007.22},"wind":{"speed":7.29,"deg":117.503},"clouds":{"all":68},"dt":1487602901,"sys":{"message":0.0061,"country":"US","sunrise":1487593278,"sunset":1487632341},"id":4984565,"name":"Auburn Hills","cod":200}
