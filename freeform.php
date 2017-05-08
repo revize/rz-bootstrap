@@ -49,7 +49,7 @@
 <script src="_assets_/plugins/instafeed/instafeed.min.js"></script>
 <script src="_assets_/plugins/sticky/jquery.sticky.js"></script>
 <script src="_assets_/plugins/matchHeight/dist/jquery.matchHeight-min.js"></script>
-<script src="_assets_/plugins/simpleWeather/jquery.simpleWeather.min.js"></script>
+<script src="_assets_/plugins/revizeWeather/js/revizeWeather.min.js"></script>
 <script src="_assets_/plugins/waypoints/waypoints.min.js"></script>
 <script src="_assets_/js/scripts.js"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5113ea471e44f9dd"></script>

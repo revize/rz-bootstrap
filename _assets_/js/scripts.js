@@ -139,19 +139,24 @@
 			}
 		});
 
-		// simpleWeather
-		if( typeof $.simpleWeather !== "undefined" ){
-			$.simpleWeather({
-				location: 'Arkansas City, KS',
+		// revizeWeather
+		if( typeof $.fn.revizeWeather !== "undefined" ){
+			$.fn.revizeWeather({
+				zip: '48326',
+				city_name: '',
 				unit: 'f',
 				success: function(weather) {
-					var html = '<span>'+weather.forecast[0].day+', '+weather.forecast[0].date+'</span>&nbsp;&nbsp;&nbsp;<span class="forecast">'+weather.temp+' '+weather.forecast[0].text+'&deg;</span>';
-					html += '<i class="icon-'+weather.code+'"></i>';
+					var date = new Date();
+					date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+					var html = '<span>'+date+'</span> <span class="forecast">'+weather.temp+'&deg; '+weather.forecast+'</span>';
+					html += '<i class="'+weather.icon+'"></i>';
 
 					$("#weather").html(html);
 				},
 				error: function(error) {
-					$("#weather").html("<p>"+error+"</p>");
+					// better to just hide the secion if there is an error
+					$('.weather').hide();
+					console.log(error);
 				}
 			});
 		}
