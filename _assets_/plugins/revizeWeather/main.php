@@ -12,7 +12,7 @@ START MAIN FUNCTION
 
 // Get passed options
 try {
-	if( !defined("API_KEY") || API_KEY === "" ) {
+	if( !defined("API_KEY") || API_KEY === "key_goes_here" || API_KEY === "" ) {
 		throw new Exception("API_KEY needs to be defined in config.", 1);
 	} 
 	
