@@ -327,10 +327,12 @@ body{overflow-x:hidden}
 
 @media only screen and (max-width:991px) {
 
-	/* rz citizens request center */
-	#formwizziwmorf tr,#formwizziwmorf tr td{display:block!important}
-	#formwizziwmorf tr table tr{display:table-row!important}
-	#formwizziwmorf tr table td{display:table-cell!important}
+	/* rz form tables - without page scope this targets editforms and makes
+	 * editing confusing
+	 */
+	#freeform #formwizziwmorf tr,#freeform #formwizziwmorf tr td{display:block!important}
+	#freeform #formwizziwmorf tr table tr{display:table-row!important}
+	#freeform #formwizziwmorf tr table td{display:table-cell!important}
 
 	.toggle,
 	.toggle2,
