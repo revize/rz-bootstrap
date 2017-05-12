@@ -220,7 +220,7 @@ body{overflow-x:hidden}
 .toggle,
 .toggle2{display:none}
 
-
+/* Don't forget to accout for span being used in space of a tag for nav items that are not links */
 /*for mega menu addjust as needed*/
 .nav>li>ul {
     -moz-column-count: 4;
@@ -243,9 +243,11 @@ body{overflow-x:hidden}
 -----------------------------------------*/ 
 #flyout{margin:0;padding:0}
 #flyout li{margin:0;display:block;position:relative}
-#flyout a{text-decoration:none;padding:15px 20px;display:block;border-bottom:1px solid #000}
+#flyout a,
+#flyout span{text-decoration:none;padding:15px 20px;display:block;border-bottom:1px solid #000}
 #flyout ul{display:none;position:absolute;top:0;left:100%;margin:0;padding:0;background:#aaa}
-#flyout ul a{font-size:13px;padding:10px 15px;width:180px}
+#flyout ul a,
+#flyout ul span{font-size:13px;padding:10px 15px;width:180px}
 #flyout li:hover > ul{display:block}
 
 .breadcrumbs{font-size:13px;text-transform:capitalize}
@@ -340,10 +342,12 @@ body{overflow-x:hidden}
 	.down-arrow{display:none} /* if not hidden above */
 	#nav{display:none}
 	#nav li{float:none;display:block}
-	#nav li a{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
+	#nav li a,
+	#nav li span{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
 	#nav ul{position:static;top:0;padding:0;background:rgba(0,0,0,.2)}
 	#nav li:hover > ul{display:none}
-	#nav ul a{width:100%}
+	#nav ul a,
+	#nav ul span{width:100%}
 	#nav ul ul{left:0}
 	#nav .toggle,
 	#nav .toggle2{position:absolute;right:0;top:0;background:rgba(0,0,0,.2);height:55px;width:55px;line-height:55px;text-align:center}
@@ -351,9 +355,11 @@ body{overflow-x:hidden}
 
 	#flyout{display:none}
 	#flyout li{}
-	#flyout li a{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
+	#flyout li a,
+	#flyout li span{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
 	#flyout ul{position:static;left:0;padding:0;background:rgba(0,0,0,.2)}
-	#flyout ul a{width:100%}
+	#flyout ul a,
+	#flyout ul span{width:100%}
 	#flyout li:hover > ul{display:none}
 
 }

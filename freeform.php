@@ -38,6 +38,7 @@
 		
 			<div class="main-wrap">	
 				<!-- Content Here -->
+				<!-- NOTE: Test Flyout with a tags and spans just like the main nav. Cannot assume all items are links. -->
 			</div><!-- /.main-wrap -->  
 
 <script src="_assets_/js/jquery.min.js"></script>
