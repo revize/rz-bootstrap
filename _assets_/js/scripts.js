@@ -339,6 +339,7 @@
 		};
 		$('.v-align').flexVerticalCenter();
 		
+		
 		// Match height for document center pages
 		if($('#RZdocument_center').length){
 			$('.aside,.entry').matchHeight({remove:true});
