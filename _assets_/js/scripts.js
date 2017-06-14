@@ -338,7 +338,18 @@
 
 		};
 		$('.v-align').flexVerticalCenter();
-
+		
+		// Match height for document center pages
+		if($('#RZdocument_center').length){
+			$('.aside,.entry').matchHeight({remove:true});
+			setInterval(function(){
+				if($('.post').outerHeight() + 300 > $('.entry').outerHeight()){
+					$('.aside').css('height',$('.entry').outerHeight() + 'px');
+				}
+			}, 200);
+		}
+		
+		
 	}); // Ready
   
 })(jQuery);
