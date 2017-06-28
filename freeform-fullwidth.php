@@ -8,6 +8,7 @@
 
 			<title>Site Name</title>
 			<meta name="description" content="">
+			<meta name="robots" content="index, follow">
 
 			<link rel="stylesheet" href="_assets_/plugins/bootstrap/css/bootstrap.min.css">	
 			<link rel="stylesheet" href="_assets_/fonts/font-awesome/css/font-awesome.min.css">
