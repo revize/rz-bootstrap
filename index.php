@@ -190,7 +190,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="copylink">
-					<p>Copy and past this code into your website.</p>
+					<p>Copy and paste this code into your website.</p>
 					<pre>&lt;a href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">Your Link Name&lt;/a&gt;</pre>
 				</div><!-- /.copylink -->
 				<div class="share-btns">
