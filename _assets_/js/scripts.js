@@ -42,7 +42,7 @@
 	$window.ready(function(){
 
 		// RZ Class
-		if(typeof $.fn.RZ !== "undefined"){
+		if(typeof RZ !== "undefined"){
 		 if(RZ.login){
 		  $body.addClass("user-logged-in");
 		 } else{
