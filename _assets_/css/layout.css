@@ -5,20 +5,20 @@
 	Author URI: http://www.revize.com/
 	Date: MONTH DAY, 2015
 
------------------------------------------------------------------------------------*/ 
+-----------------------------------------------------------------------------------*/
 
 /* -----------------------------------------
 
 #basic styles
 
------------------------------------------*/ 
+-----------------------------------------*/
 body{background:#fff;font-size:14px;line-height:1.6;font-family:sans-serif;color:#444;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}
 
 /* -----------------------------------------
 
 #typography
 
------------------------------------------*/ 
+-----------------------------------------*/
 h1,h2,h3,h4,h5,h6{color:#111;font-weight:normal;margin-bottom:30px;line-height:1.2}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
 h1{font-size:36px}
@@ -52,7 +52,7 @@ hr{border:solid #ccc;border-width:1px 0 0;clear:both;margin:10px 0 30px;height:0
 
 #links
 
------------------------------------------*/ 
+-----------------------------------------*/
 a,a:visited{color:#0f99ee;text-decoration:underline;
 -webkit-transition:color .3s ease;-moz-transition:color .3s ease;-o-transition:color .3s ease;transition:color .3s ease;
 -webkit-transition:background .3s ease;-moz-transition:background .3s ease;-o-transition:background .3s ease;transition:background .3s ease}
@@ -63,7 +63,7 @@ p a,p a:visited{line-height:inherit}
 
 #lists
 
------------------------------------------*/ 
+-----------------------------------------*/
 ul,ol{margin-bottom:20px;margin-left:10px}
 ul{list-style:disc}
 ol{list-style:decimal}
@@ -100,7 +100,7 @@ img[style*="float:left"]{
 
 #buttons
 
------------------------------------------*/ 
+-----------------------------------------*/
 .button,
 a.button,
 button,
@@ -129,7 +129,7 @@ input::-moz-focus-inner{border:0;padding:0}
 
 #forms
 
------------------------------------------*/ 
+-----------------------------------------*/
 form{margin-bottom:30px}
 fieldset{margin-bottom:30px}
 input[type="text"],
@@ -159,7 +159,7 @@ legend span{font-weight:normal;font-size:13px;color:#444}
 
 #rz intranet
 
------------------------------------------*/ 
+-----------------------------------------*/
 form.loginform{background:#fff;padding:30px;border:1px solid #D2DFEF}
 form.loginform p{background:#E65229;color:#fff;padding:20px;line-height:1}
 form.loginform label{font-weight:normal}
@@ -169,7 +169,7 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 #rz notify
 
------------------------------------------*/ 
+-----------------------------------------*/
 .e-notify{font-weight:bold;font-size:12px;background:#E7DF7F;position:fixed;padding:3px 13px 2px;bottom:10px;left:10px;color:#111;border-radius:50px;text-transform:uppercase;z-index:999;overflow:hidden;box-shadow:0 0 10px rgba(0,0,0,.175)}
 .e-notify img{display:none}
 .e-notify i{margin-right:4px!important}
@@ -179,7 +179,7 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 #rz alert
 
------------------------------------------*/ 
+-----------------------------------------*/
 .floating-alert{position:fixed;z-index:99999;bottom:10px;margin:0;right:10px;border:3px solid #fff;background:#000;background:rgba(0,0,0,.9);box-shadow:0 0 10px rgba(0,0,0,.2);color:#fff;padding:30px;font-size:14px;width:350px;}
 .floating-alert h1{color:#ffc140;margin:0 0 10px;font-family:sans-serif;font-weight:bold;text-transform:uppercase;font-size:18px}
 .floating-alert .btn{padding:8px 10px;margin:20px 0 0 0!important}
@@ -195,7 +195,7 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 #loader
 
------------------------------------------*/ 
+-----------------------------------------*/
 #loader-wrapper{position:fixed;top:0;right:0;bottom:0;left:0;background:#233447;z-index:99999;display:none!important}
 #loader-wrapper img{width:60px;position:absolute;top:50%;left:50%;margin:-30px 0 0 -30px;	animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation;-webkit-animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation}
 @keyframes spinning_animation {
@@ -213,7 +213,7 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 #main
 
------------------------------------------*/ 
+-----------------------------------------*/
 body{overflow-x:hidden}
 .text-overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #nav-toggle,
@@ -235,12 +235,13 @@ body{overflow-x:hidden}
 .nav>li>ul li a{display:block}
 /*for mega menu addjust as needed*/
 
+#calendarEvent{left:0px;max-height:500px;overflow-y:auto;margin:0 auto}
 
 /* -----------------------------------------
 
 #inner
 
------------------------------------------*/ 
+-----------------------------------------*/
 #flyout{margin:0;padding:0}
 #flyout li{margin:0;display:block;position:relative}
 #flyout a,
@@ -320,7 +321,7 @@ body{overflow-x:hidden}
 
 #media queries
 
------------------------------------------*/ 
+-----------------------------------------*/
 @media only screen and (min-width:992px) {
 
 		#flyout,#nav{display:block!important}
@@ -382,7 +383,7 @@ body{overflow-x:hidden}
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width:479px) {}
 
-@media print { 
+@media print {
 	.nav-wrap,
 	.sidebar,
 	#flyout-wrap,
