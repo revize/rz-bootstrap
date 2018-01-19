@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
 
 	<meta charset="utf-8">
@@ -10,10 +10,10 @@
 	<meta name="description" content="">
 	<meta name="robots" content="index, follow">
 
-	<link rel="stylesheet" href="_assets_/plugins/bootstrap/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="_assets_/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="_assets_/fonts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="_assets_/css/animate.min.css">
-	<link rel="stylesheet" href="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.css">			
+	<link rel="stylesheet" href="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="_assets_/css/layout.css">
 
 	<link rel="shortcut icon" href="_assets_/images/favicon.ico">
@@ -24,7 +24,7 @@
 
 	<!--[if !IE]><!-->
 	<link rel="stylesheet" href="_assets_/plugins/add-to-homescreen/style/addtohomescreen.css">
-	<script src="_assets_/plugins/add-to-homescreen/src/addtohomescreen.min.js"></script>	
+	<script src="_assets_/plugins/add-to-homescreen/src/addtohomescreen.min.js"></script>
 	<script>addToHomescreen();</script>
 	<!--<![endif]-->
 
@@ -35,7 +35,7 @@
 
 </head>
 <body id="homepage">
-	
+
 <div id="loader-wrapper"><img src="_assets_/images/ripple.gif" alt="Loading..."></div><!-- /.loader-wrapper -->
 
 <div class="main-wrap">
@@ -43,15 +43,15 @@
 
 		<header>
 			<div class="row">
-			
+
 				<div class="col-md-12">
 					<div class="page-header"><h2>Sample Header plus nav</h2></div><!-- /.page-header -->
 				</div><!-- /.col-md-12 -->
-					
+
 				<div id="header" class="col-md-12 clearfix">
 
 					<a href="" class="logo"><h1 class="h4">Logo</h1></a>
-				
+
 					<ul id="nav">
 						<li><a href="">Home</a></li>
 						<li><a href="">Departments</a>
@@ -68,7 +68,7 @@
 										<li><a href="">Education</a></li>
 										<li><a href="">Parks &amp; Recreation</a></li>
 										<li><a href="">Information Technology</a></li>
-									</ul>										
+									</ul>
 								</li>
 								<li><a href="">Finance</a></li>
 								<li><a href="">Planning</a></li>
@@ -103,7 +103,7 @@
 										<li><a href="">Education</a></li>
 										<li><a href="">Parks &amp; Recreation</a></li>
 										<li><a href="">Information Technology</a></li>
-									</ul>	
+									</ul>
 								</li>
 								<li><a href="">Contact Us</a></li>
 								<li><a href="">News</a></li>
@@ -111,9 +111,9 @@
 								<li><a href="">Jobs</a></li>
 								<li><a href="">Minutes</a></li>
 								<li><a href="">RFP's</a></li>
-							</ul>					
+							</ul>
 						</li>
-					</ul>			
+					</ul>
 
 					<div id="search">
 						<form class="search-form" method="get" action="search.php">
@@ -122,7 +122,7 @@
 							<button>Go</button>
 						</form>
 					</div><!-- /#search -->
-				
+
 				</div><!-- /#header -->
 			</div><!-- /.row -->
 		</header>
@@ -130,7 +130,7 @@
 		<div class="weather">
 			<div id="weather"></div><!-- /#weather -->
 		</div><!-- /.weather -->
-		
+
 		<div class="row">
 			<div class="col-md-12">
 
@@ -143,37 +143,55 @@
 
 			</div><!-- /.col-md-12 -->
 		</div><!-- /.row -->
-		
+
 		<div class="row">
 			<div class="col-md-6">
-				<div id="instafeed"></div> 
+				<div id="instafeed"></div>
 			</div><!-- /.col-md-12 -->
 			<div class="col-md-6">
-				<div id="twitterfeed"></div> 
+				<div id="twitterfeed"></div>
 			</div><!-- /.col-md-12 -->
 		</div><!-- /.row -->
-		
+
+		<div class="row ">
+			<div class="col-md-6 col1">
+				<h2>City Newsletter</h2>
+                <form class="signup submission" id="newletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
+					<input type="email" name="femail" placeholder="Enter your email address" required>
+					<button>Sign Up</button>
+				</form>
+			</div><!-- /.col-md-6 -->
+
+			<div class="col-md-6">
+				<h2>Stay Updated</h2>
+				<form action="enotify/index.php" id="enotify-signup" class="signup clearfix">
+					<input type="email" name="email" placeholder="Enter your email address" required>
+					<button>Sign Up</button>
+				</form>
+			</div><!-- /.col-md-6 -->
+		</div><!-- /.row -->
+
 	</div><!-- /.container -->
 
-<footer id="footer">
+	<footer id="footer">
 
-	<span id="revize-login">
-		<span class="powered-by-revize">
-			Powered By <a id="powered-by-revize-link" target="_blank" href="http://www.revize.com">Revize</a>
+		<span id="revize-login">
+			<span class="powered-by-revize">
+				Powered By <a id="powered-by-revize-link" target="_blank" href="http://www.revize.com">Revize</a>
+			</span>
+			<a id="revize-login-link" href="">Login</a>
 		</span>
-		<a id="revize-login-link" href="">Login</a>
-	</span>
-		
-</footer><!-- /#footer -->
 
-<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h1>Alert Title 30 characters Max</h1>
-	<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
-	<p><a href="#" class="btn">Read More</a></p>
-</div><!-- /.alert -->
+	</footer><!-- /#footer -->
 
-</div><!-- /.main-wrap -->  
+	<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h1>Alert Title 30 characters Max</h1>
+		<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
+		<p><a href="#" class="btn">Read More</a></p>
+	</div><!-- /.alert -->
+
+</div><!-- /.main-wrap -->
 
 
 <!-- Share widget make into an include file -->
@@ -207,7 +225,7 @@
 							target="_blank">
 								<i class="fa fa-twitter"></i> Twitter
 							</a>
-						</div>	
+						</div>
 						<div class="col-md-3 col-xs-6">
 							<a href="https://www.plus.google.com/share?url=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-google" onclick="return !window.open(this.href, 'google ', 'width=500,height=500')"
 							target="_blank">

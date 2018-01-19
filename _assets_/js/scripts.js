@@ -4,11 +4,11 @@
 	Author Design: Samir Alley @samiralley | Tom Gooden @good3n
 	Author URI: http://www.revize.com/
 	Date: MONTH DAY, 2015
-	
------------------------------------------------------------------------------------*/		
+
+-----------------------------------------------------------------------------------*/
 
 (function($) {
-		 
+
 	'use strict';
 
 	var $window = $(window),
@@ -19,7 +19,7 @@
 	 * Copyright 2014-2015 Twitter, Inc.
 	 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 	 */
-	
+
 	// See the Getting Started docs for more information:
 	// http://getbootstrap.com/getting-started/#support-ie10-width
 	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -30,15 +30,33 @@
 			)
 		); document.querySelector('head').appendChild(msViewportStyle);
 	}
-	
+
 	// Preloader
-	$window.load(function() {           
+	$window.load(function() {
 		setTimeout(function(){
 			$body.addClass('loaded');
 			 $('#loader-wrapper').fadeOut();
 		}, 600);
+
+		/*
+		* E-Notify Auto submit
+		*/
+		$.urlParam=function(n){var e=new RegExp("[?&]"+n+"=([^]*)").exec(window.location.href);return null==e?null:e[1]||0};
+		var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"');
+		if( $enotify.length > 0 ){
+			var $emailField = $enotify.contents().find('input[name="email"]');
+			var emailStr = $.urlParam("email");
+			if( emailStr != null ){
+				$emailField.val( decodeURIComponent(emailStr) );
+				var $signIn = $($enotify.contents().find("form input[title='Sign In']")[0]);
+				if( $signIn.length > 0 ){
+					$signIn.trigger("click");
+				}
+			}
+		}
+
 	});
-	
+
 	$window.ready(function(){
 
 		// RZ Class
@@ -49,7 +67,7 @@
 			 $body.addClass("user-not-logged-in");
 		 }
 		}
-		 
+
 		// Search Toggle
 		$('#search-toggle').on('click',function(e){
 			$('#search').stop().slideToggle(200);
@@ -65,15 +83,15 @@
 		// Menu Arrows
 		$("#nav > li:has(ul)").addClass('first-parent').children("a,span").append('<i class="fa fa-angle-down down-arrow">');
 
-		// Menu Toggles 
+		// Menu Toggles
 		$("#nav >li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle">');
 		$("#nav li li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle2">');
 
 		function addNavClass() {
 			if ($window.width() < 992) {
 				$("#nav >li>ul").addClass('first-level');
-				$("#nav  li ul ul").addClass('second-level');      
-			
+				$("#nav  li ul ul").addClass('second-level');
+
 			} else{
 					$("#nav >li>ul").removeClass('first-level').css('display','');
 					$("#nav  li ul ul").removeClass('second-level').css('display','');
@@ -81,7 +99,7 @@
 		}
 		addNavClass();
 		$window.resize(addNavClass);
-	
+
 		$(".toggle").click(function(e) {
 				e.preventDefault();
 			if($(this).parent().next('.first-level').is(":visible")){
@@ -102,7 +120,7 @@
 			}
 		});
 
-		// Add Class To Nav Items + Icons if Needed 
+		// Add Class To Nav Items + Icons if Needed
 		$('#nav> li:nth-child(1) >a, #nav> li:nth-child(1) >span').addClass('nav-item-one').prepend();
 		$('#nav> li:nth-child(2) >a, #nav> li:nth-child(2) >span').addClass('nav-item-two').prepend();
 		$('#nav> li:nth-child(3) >a, #nav> li:nth-child(3) >span').addClass('nav-item-three').prepend();
@@ -117,7 +135,7 @@
 
 		if (flyout.text().length){
 			flyoutwrap.prepend('<div id="flyout-toggle"><i class="fa fa-bars"></i> Sub Menu</div>');
-		}	
+		}
 
 		$("#flyout-toggle").on("click", function(){
 			flyout.slideToggle();
@@ -126,7 +144,7 @@
 
 		$("#flyout li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle-children">');
 		$("#flyout ul").addClass('flyout-children');
-		
+
 		var flyoutChildren = $('.flyout-children');
 
 		$(".toggle-children").click(function(e) {
@@ -197,8 +215,8 @@
 				remove: false
 			});
 		}
-	 
-		// bxSlider 
+
+		// bxSlider
 		if(typeof $.fn.bxSlider !== "undefined"){
 			$('.bxslider').bxSlider({
 				mode:'fade',
@@ -210,7 +228,7 @@
 		// Twitter Feed
 		if(typeof $.fn.tweet !== "undefined"){
 			$("#twitterfeed").tweet({
-				modpath: '_assets_/plugins/twitter/',        
+				modpath: '_assets_/plugins/twitter/',
 				username: "RevizeSoftware",
 				join_text: "auto",
 				avatar_size: 0,
@@ -249,16 +267,16 @@
 				var osElement = $(this),
 					osAnimationClass = osElement.data('os-animation'),
 					osAnimationDelay = osElement.data('os-animation-delay');
-				
+
 				osElement.css({
 					'-moz-animation-delay':     osAnimationDelay,
 					'animation-delay':          osAnimationDelay,
 					'-webkit-animation-delay':  osAnimationDelay
 				});
-	
+
 				var osTrigger = ( trigger ) ? trigger : osElement;
-	
-				if(typeof $.fn.waypoint !== "undefined"){ 
+
+				if(typeof $.fn.waypoint !== "undefined"){
 					osTrigger.waypoint(function() {
 						osElement.addClass('animated').addClass(osAnimationClass);
 					},{
@@ -338,8 +356,8 @@
 
 		};
 		$('.v-align').flexVerticalCenter();
-		
-		
+
+
 		// Remove matchHeight on document center pages
 		if($('#RZdocument_center').length){
 			$('.aside,.entry').matchHeight({remove:true});
@@ -352,8 +370,8 @@
 				}, 200);
 			}
 		}
-		
-		
+
+
 	}); // Ready
-  
+
 })(jQuery);
