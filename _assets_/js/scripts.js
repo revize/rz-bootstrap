@@ -42,7 +42,7 @@
 		* E-Notify Auto submit
 		*/
 		$.urlParam=function(n){var e=new RegExp("[?&]"+n+"=([^]*)").exec(window.location.href);return null==e?null:e[1]||0};
-		var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"');
+		var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"]');
 		if( $enotify.length > 0 ){
 			var $emailField = $enotify.contents().find('input[name="email"]');
 			var emailStr = $.urlParam("email");
