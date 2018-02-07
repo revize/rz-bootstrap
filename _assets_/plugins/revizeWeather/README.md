@@ -34,7 +34,7 @@ Defualt: 'us'
 ```
 success
 Anonymous function run after successfully fetching the data
-Example of fetching temperature in this function: weather.temp 
+Example of fetching temperature in this function: weather.temp
 Default: function(weather){}
 ```
 
@@ -57,7 +57,7 @@ Default: '_assets_/plugins/revizeWeather/main.php'
 // Include the class
 include_once __DIR__."\class\OpenWeatherMapWidget.php";
 
-// Call  With Options 
+// Call  With Options
 $weatherWidget = new OpenWeatherMapWidget({
 	'RAW_PHP' => true,
 	"appid" => "API_KEY_HERE",
@@ -71,7 +71,8 @@ $response = $weatherWidget->getData();
 // error checking would have to be done by hand
 ```
 
-v1.0.1
----------------------------------------------------
+# Changes
+
+## v1.0.1
 - Fix thrown exception in main.php if API_KEY has not been defined in php. This should help developers remember to defnine the constant.
 - Move JS instructions to to as they will be most helpful for users of the plugin. The php notes or for plugin devs.
