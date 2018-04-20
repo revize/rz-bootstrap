@@ -33,10 +33,15 @@
 
 	// Preloader
 	$window.load(function() {
+
 		setTimeout(function(){
 			$body.addClass('loaded');
 			 $('#loader-wrapper').fadeOut();
 		}, 600);
+
+	});
+
+	$window.ready(function(){
 
 		/*
 		* E-Notify Auto submit
@@ -44,20 +49,11 @@
 		$.urlParam=function(n){var e=new RegExp("[?&]"+n+"=([^]*)").exec(window.location.href);return null==e?null:e[1]||0};
 		var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"]');
 		if( $enotify.length > 0 ){
-			var $emailField = $enotify.contents().find('input[name="email"]');
 			var emailStr = $.urlParam("email");
 			if( emailStr != null ){
-				$emailField.val( decodeURIComponent(emailStr) );
-				var $signIn = $($enotify.contents().find("form input[title='Sign In']")[0]);
-				if( $signIn.length > 0 ){
-					$signIn.trigger("click");
-				}
+				$enotify.attr("src", $enotify.attr("src") + "&email=" + emailStr);
 			}
 		}
-
-	});
-
-	$window.ready(function(){
 
 		// RZ Class
 		if(typeof RZ !== "undefined"){

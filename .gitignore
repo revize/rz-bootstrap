@@ -1,1 +1,3 @@
 .phpintel
+*.sublime-project
+*.sublime-workspace
