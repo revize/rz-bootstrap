@@ -77,7 +77,7 @@ class YahooWeatherWidget extends Widget {
 			$common['code'] = isset($condition->code) ? $condition->code : "";
 			$common['temp'] = isset($condition->temp) ? $condition->temp : "";
 			$common['date'] = isset($condition->date) ? $condition->date : "";
-			$common['text'] = isset($condition->text) ? $condition->text : "";
+			$common['desc'] = isset($condition->text) ? $condition->text : "";
 			$common['icon'] = $this->mapIcon($common['code']);
 
 		} catch (Exception $e) {
