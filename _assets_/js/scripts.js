@@ -31,6 +31,240 @@
 		); document.querySelector('head').appendChild(msViewportStyle);
 	}
 
+	/*
+	* E-Notify Auto submit
+	*/
+	$.urlParam=function(n){var e=new RegExp("[?&]"+n+"=([^]*)").exec(window.location.href);return null==e?null:e[1]||0};
+	var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"]');
+	if( $enotify.length > 0 ){
+		var emailStr = $.urlParam("email");
+		if( emailStr != null ){
+			$enotify.attr("src", $enotify.attr("src") + "&email=" + emailStr);
+		}
+	}
+
+	// RZ Class
+	if(typeof RZ !== "undefined"){
+	 if(RZ.login){
+	  $body.addClass("user-logged-in");
+	 } else{
+		 $body.addClass("user-not-logged-in");
+	 }
+	}
+
+	// Search Toggle
+	$('#search-toggle').on('click',function(e){
+		$('#search').stop().slideToggle(200);
+		$(this).toggleClass('fa-search fa-close');
+	});
+
+	// Navigation Toggle
+	$("#nav-toggle").on("click", function(){
+		$("#nav").stop().slideToggle();
+		$(this).toggleClass("active");
+	});
+
+	// Menu Arrows
+	$("#nav > li:has(ul)").addClass('first-parent').children("a,span").append('<i class="fa fa-angle-down down-arrow">');
+
+	// Menu Toggles
+	$("#nav >li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle">');
+	$("#nav li li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle2">');
+
+	function addNavClass() {
+		if ($window.width() < 992) {
+			$("#nav >li>ul").addClass('first-level');
+			$("#nav  li ul ul").addClass('second-level');
+
+		} else{
+				$("#nav >li>ul").removeClass('first-level').css('display','');
+				$("#nav  li ul ul").removeClass('second-level').css('display','');
+		}
+	}
+	addNavClass();
+	$window.resize(addNavClass);
+
+	$(".toggle").click(function(e) {
+			e.preventDefault();
+		if($(this).parent().next('.first-level').is(":visible")){
+			$(this).parent().next('.first-level').slideUp();
+		} else {
+			$(".first-level").slideUp("slow");
+			$(this).parent().next('.first-level').slideToggle();
+		}
+	});
+
+	$(".toggle2").click(function(e) {
+			e.preventDefault();
+		if($(this).parent().next('.second-level').is(":visible")){
+			$(this).parent().next('.second-level').slideUp();
+		} else {
+			$(".second-level").slideUp("slow");
+			$(this).parent().next('.second-level').slideToggle();
+		}
+	});
+
+	// Add Class To Nav Items + Icons if Needed
+	$('#nav> li:nth-child(1) >a, #nav> li:nth-child(1) >span').addClass('nav-item-one').prepend();
+	$('#nav> li:nth-child(2) >a, #nav> li:nth-child(2) >span').addClass('nav-item-two').prepend();
+	$('#nav> li:nth-child(3) >a, #nav> li:nth-child(3) >span').addClass('nav-item-three').prepend();
+	$('#nav> li:nth-child(4) >a, #nav> li:nth-child(4) >span').addClass('nav-item-four').prepend();
+	$('#nav> li:nth-child(5) >a, #nav> li:nth-child(5) >span').addClass('nav-item-five').prepend();
+	$('#nav> li:nth-child(6) >a, #nav> li:nth-child(6) >span').addClass('nav-item-six').prepend();
+	$('#nav> li:nth-child(7) >a, #nav> li:nth-child(7) >span').addClass('nav-item-seven').prepend();
+
+	// Flyout
+	var flyout = $('#flyout'),
+		flyoutwrap = $('#flyout-wrap');
+
+	if (flyout.text().length){
+		flyoutwrap.prepend('<div id="flyout-toggle"><i class="fa fa-bars"></i> Sub Menu</div>');
+	}
+
+	$("#flyout-toggle").on("click", function(){
+		flyout.slideToggle();
+		$(this).toggleClass("active");
+	});
+
+	$("#flyout li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle-children">');
+	$("#flyout ul").addClass('flyout-children');
+
+	var flyoutChildren = $('.flyout-children');
+
+	$(".toggle-children").click(function(e) {
+			e.preventDefault();
+		if($(this).parent().next(flyoutChildren).is(":visible")){
+			$(this).parent().next(flyoutChildren).slideUp();
+		} else {
+			$(flyoutChildren).slideUp("slow");
+			$(this).parent().next(flyoutChildren).slideToggle();
+		}
+	});
+
+	// start calendar resize handler
+	function resizeIframe(height) {
+		var iFrameID = document.getElementById('calendar');
+		if(iFrameID) {
+				// here you can set the height, I delete it first, then I set it again
+				iFrameID.height = "";
+				iFrameID.height = height;
+		}
+		console.log("height to: " + height);
+	}
+	var eventMethod = window.addEventListener
+	? "addEventListener"
+	: "attachEvent";
+	var eventHandler = window[eventMethod];
+	var messageEvent = eventMethod === "attachEvent"
+		? "onmessage"
+		: "message";
+	eventHandler(messageEvent, function (e) {
+
+		if( e.data && e.data[0] === "setCalHeight" )
+		{
+			if(typeof resizeIframe === 'function'){
+				resizeIframe(e.data[1]);
+			}
+
+		}
+
+	});
+	// end calendar resize handler
+
+	// revizeWeather
+	if( typeof $.fn.revizeWeather !== "undefined" ){
+		$.fn.revizeWeather({
+			zip: '48326',
+			city_name: '',
+			unit: 'f',
+			success: function(weather) {
+				var date = new Date();
+				date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+				var html = '<span>'+date+'</span> <span class="forecast">'+weather.temp+'&deg; '+weather.forecast+'</span>';
+				html += '<i class="'+weather.icon+'"></i>';
+
+				$("#weather").html(html);
+			},
+			error: function(error) {
+				// better to just hide the secion if there is an error
+				$('.weather').hide();
+				console.log(error);
+			}
+		});
+	}
+
+	// Mega Footer Toggle
+	$('.header-toggle').click(function () {
+		var inner = $(this).next('.inner-toggle');
+		if (inner.is(':hidden')) {
+			inner.slideDown('200');
+		} else {
+			inner.slideUp('200');
+		}
+	});
+
+	// Tabs
+	$('#tabs li a').click(function(e){
+		$('#tabs li, #tabs-content .current').removeClass('current').removeClass('fadeInLeft');
+		$(this).parent().addClass('current');
+
+		var currentTab = $(this).attr('href');
+
+		e.preventDefault();
+		$(currentTab).addClass('current animated fadeInLeft');
+	});
+
+	// Twitter Feed
+	if(typeof $.fn.tweet !== "undefined"){
+		$("#twitterfeed").tweet({
+			modpath: '_assets_/plugins/twitter/',
+			username: "RevizeSoftware",
+			join_text: "auto",
+			avatar_size: 0,
+			count: 1,
+			auto_join_text_default: "",
+			auto_join_text_ed: "",
+			auto_join_text_ing: "",
+			auto_join_text_reply: "",
+			auto_join_text_url: "",
+			loading_text: "Loading Tweet..."
+		});
+	}
+
+	// Instafeed Feed
+	if(typeof $.fn.Instafeed !== "undefined"){
+		var userFeed = new Instafeed({
+			get: 'user',
+			resolution:'standard_resolution',
+			limit:9,
+			userId: 223202806,
+			accessToken: '303202123.f7e9b72.27c687fbd9c24ecbb29dc92951cdf724'
+		});
+		userFeed.run();
+	}
+
+	// Sticky
+	if(typeof $.fn.sticky !== "undefined"){
+		$("#sticky").sticky({
+			topSpacing:0
+		});
+	}
+
+
+	// bxSlider
+	if(typeof $.fn.bxSlider !== "undefined"){
+		$('.bxslider').bxSlider({
+			mode:'fade',
+			auto:($('.bxslider').children().length < 2) ? false : true,
+			pager: false
+		});
+	}
+
+	// Owl Slider
+	if(typeof $.fn.owlCarousel !== "undefined"){
+		$("#owl-slider").owlCarousel();
+	}
+
 	// Preloader
 	$window.load(function() {
 
@@ -43,164 +277,6 @@
 
 	$window.ready(function(){
 
-		/*
-		* E-Notify Auto submit
-		*/
-		$.urlParam=function(n){var e=new RegExp("[?&]"+n+"=([^]*)").exec(window.location.href);return null==e?null:e[1]||0};
-		var $enotify = $('iframe[src*="/revize/plugins/notify/notify.jsp"]');
-		if( $enotify.length > 0 ){
-			var emailStr = $.urlParam("email");
-			if( emailStr != null ){
-				$enotify.attr("src", $enotify.attr("src") + "&email=" + emailStr);
-			}
-		}
-
-		// RZ Class
-		if(typeof RZ !== "undefined"){
-		 if(RZ.login){
-		  $body.addClass("user-logged-in");
-		 } else{
-			 $body.addClass("user-not-logged-in");
-		 }
-		}
-
-		// Search Toggle
-		$('#search-toggle').on('click',function(e){
-			$('#search').stop().slideToggle(200);
-			$(this).toggleClass('fa-search fa-close');
-		});
-
-		// Navigation Toggle
-		$("#nav-toggle").on("click", function(){
-			$("#nav").stop().slideToggle();
-			$(this).toggleClass("active");
-		});
-
-		// Menu Arrows
-		$("#nav > li:has(ul)").addClass('first-parent').children("a,span").append('<i class="fa fa-angle-down down-arrow">');
-
-		// Menu Toggles
-		$("#nav >li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle">');
-		$("#nav li li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle2">');
-
-		function addNavClass() {
-			if ($window.width() < 992) {
-				$("#nav >li>ul").addClass('first-level');
-				$("#nav  li ul ul").addClass('second-level');
-
-			} else{
-					$("#nav >li>ul").removeClass('first-level').css('display','');
-					$("#nav  li ul ul").removeClass('second-level').css('display','');
-			}
-		}
-		addNavClass();
-		$window.resize(addNavClass);
-
-		$(".toggle").click(function(e) {
-				e.preventDefault();
-			if($(this).parent().next('.first-level').is(":visible")){
-				$(this).parent().next('.first-level').slideUp();
-			} else {
-				$(".first-level").slideUp("slow");
-				$(this).parent().next('.first-level').slideToggle();
-			}
-		});
-
-		$(".toggle2").click(function(e) {
-				e.preventDefault();
-			if($(this).parent().next('.second-level').is(":visible")){
-				$(this).parent().next('.second-level').slideUp();
-			} else {
-				$(".second-level").slideUp("slow");
-				$(this).parent().next('.second-level').slideToggle();
-			}
-		});
-
-		// Add Class To Nav Items + Icons if Needed
-		$('#nav> li:nth-child(1) >a, #nav> li:nth-child(1) >span').addClass('nav-item-one').prepend();
-		$('#nav> li:nth-child(2) >a, #nav> li:nth-child(2) >span').addClass('nav-item-two').prepend();
-		$('#nav> li:nth-child(3) >a, #nav> li:nth-child(3) >span').addClass('nav-item-three').prepend();
-		$('#nav> li:nth-child(4) >a, #nav> li:nth-child(4) >span').addClass('nav-item-four').prepend();
-		$('#nav> li:nth-child(5) >a, #nav> li:nth-child(5) >span').addClass('nav-item-five').prepend();
-		$('#nav> li:nth-child(6) >a, #nav> li:nth-child(6) >span').addClass('nav-item-six').prepend();
-		$('#nav> li:nth-child(7) >a, #nav> li:nth-child(7) >span').addClass('nav-item-seven').prepend();
-
-		// Flyout
-		var flyout = $('#flyout'),
-			flyoutwrap = $('#flyout-wrap');
-
-		if (flyout.text().length){
-			flyoutwrap.prepend('<div id="flyout-toggle"><i class="fa fa-bars"></i> Sub Menu</div>');
-		}
-
-		$("#flyout-toggle").on("click", function(){
-			flyout.slideToggle();
-			$(this).toggleClass("active");
-		});
-
-		$("#flyout li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle-children">');
-		$("#flyout ul").addClass('flyout-children');
-
-		var flyoutChildren = $('.flyout-children');
-
-		$(".toggle-children").click(function(e) {
-				e.preventDefault();
-			if($(this).parent().next(flyoutChildren).is(":visible")){
-				$(this).parent().next(flyoutChildren).slideUp();
-			} else {
-				$(flyoutChildren).slideUp("slow");
-				$(this).parent().next(flyoutChildren).slideToggle();
-			}
-		});
-
-		// revizeWeather
-		if( typeof $.fn.revizeWeather !== "undefined" ){
-			$.fn.revizeWeather({
-				zip: '48326',
-				city_name: '',
-				unit: 'f',
-				success: function(weather) {
-					var date = new Date();
-					date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
-					var html = '<span>'+date+'</span> <span class="forecast">'+weather.temp+'&deg; '+weather.forecast+'</span>';
-					html += '<i class="'+weather.icon+'"></i>';
-
-					$("#weather").html(html);
-				},
-				error: function(error) {
-					// better to just hide the secion if there is an error
-					$('.weather').hide();
-					console.log(error);
-				}
-			});
-		}
-
-		// Mega Footer Toggle
-		$('.header-toggle').click(function () {
-			var inner = $(this).next('.inner-toggle');
-			if (inner.is(':hidden')) {
-				inner.slideDown('200');
-			} else {
-				inner.slideUp('200');
-			}
-		});
-
-		// Tabs
-		$('#tabs li a').click(function(e){
-			$('#tabs li, #tabs-content .current').removeClass('current').removeClass('fadeInLeft');
-			$(this).parent().addClass('current');
-
-			var currentTab = $(this).attr('href');
-
-			e.preventDefault();
-			$(currentTab).addClass('current animated fadeInLeft');
-		});
-
-		// Owl Slider
-		if(typeof $.fn.owlCarousel !== "undefined"){
-			$("#owl-slider").owlCarousel();
-		}
-
 		// matchHeight
 		if(typeof $.fn.matchHeight !== "undefined"){
 			$('.equal').matchHeight({
@@ -209,51 +285,6 @@
 				property: 'height', // height or min-height
 				target: null,
 				remove: false
-			});
-		}
-
-		// bxSlider
-		if(typeof $.fn.bxSlider !== "undefined"){
-			$('.bxslider').bxSlider({
-				mode:'fade',
-				auto:($('.bxslider').children().length < 2) ? false : true,
-				pager: false
-			});
-		}
-
-		// Twitter Feed
-		if(typeof $.fn.tweet !== "undefined"){
-			$("#twitterfeed").tweet({
-				modpath: '_assets_/plugins/twitter/',
-				username: "RevizeSoftware",
-				join_text: "auto",
-				avatar_size: 0,
-				count: 1,
-				auto_join_text_default: "",
-				auto_join_text_ed: "",
-				auto_join_text_ing: "",
-				auto_join_text_reply: "",
-				auto_join_text_url: "",
-				loading_text: "Loading Tweet..."
-			});
-		}
-
-		// Instafeed Feed
-		if(typeof $.fn.Instafeed !== "undefined"){
-			var userFeed = new Instafeed({
-				get: 'user',
-				resolution:'standard_resolution',
-				limit:9,
-				userId: 223202806,
-				accessToken: '303202123.f7e9b72.27c687fbd9c24ecbb29dc92951cdf724'
-			});
-			userFeed.run();
-		}
-
-		// Sticky
-		if(typeof $.fn.sticky !== "undefined"){
-			$("#sticky").sticky({
-				topSpacing:0
 			});
 		}
 
