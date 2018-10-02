@@ -24,6 +24,6 @@ try {
 	print $response;
 
 } catch (Exception $e) {
-	$response = array( "error" => "$e");
+	$response = array( "error" => $e->getMessage());
 	print json_encode($response);
 }
