@@ -2,13 +2,14 @@
 abstract class Widget {
 
 	protected $apiCall;
-	protected $apiURI; 
+	protected $apiURI;
 	protected $defaultApiUnit;
 	protected $cacheExpiration = "-60 minutes";
 	protected $cacheSize = 100000;
 	protected $cacheFile;
 	protected $RAW_PHP = false;
-	
+	protected $curlError = "";
+
 	public $options;
 
 	abstract protected function dataToCommonJSON($response); // api specific conversion to make js interface similar accross APIS
@@ -28,6 +29,9 @@ abstract class Widget {
 	// cURL request to the API
 	protected function queryApi() {
 
+		//clear existing errors
+		$this->curlError = "";
+
 		// Set curl handler
 		$curl = curl_init();
 
@@ -41,12 +45,17 @@ abstract class Widget {
 		// send request and save response
 		$response = curl_exec($curl);
 
+		if( $errno = curl_errno($curl) ) {
+		    $error_message = curl_strerror($errno);
+		    $this->curlError = "cURL error ({$errno}): {$error_message}";
+		}
+
 		curl_close($curl);
-		
+
 		return $response;
 	}
 
-	// Returns array with two values [0]: 
+	// Returns array with two values [0]:
 	protected function checkCache($ignoreTime = false) {
 		if( file_exists($this->cacheFile) ) {
 			$fHandler = fopen($this->cacheFile,'r');
@@ -107,9 +116,9 @@ abstract class Widget {
 			$responseDecoded = json_decode($cache);
 		}
 
-		// print "Response as String = " . $response; 
+		// print "Response as String = " . $response;
 
-		
+
 		if( $response === null ) {
 			throw new Exception("No Response to return", 1);
 		}

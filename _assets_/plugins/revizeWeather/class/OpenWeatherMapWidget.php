@@ -54,9 +54,15 @@ class OpenWeatherMapWidget extends Widget {
 	}
 
 	protected function hasApiError($response) {
+
+		if( !empty($this->curlError) ) {
+			return $this->curlError;
+		}
+
 		if( $response->cod !== 200 ) {
 			return $response->cod . ":  " . $response->message;
 		}
+
 		return false;
 	}
 
@@ -154,7 +160,7 @@ class OpenWeatherMapWidget extends Widget {
 			// windy - Must be passed as condition code instead  of icon
 			case '905':
 				return "icon-24";
-				
+
 			default:
 				return false;
 		}
@@ -164,7 +170,7 @@ class OpenWeatherMapWidget extends Widget {
 
 /*********************************************************
 
-	API response JSON 
+	API response JSON
 
 **********************************************************
 coord
@@ -211,7 +217,7 @@ icon codes = https://openweathermap.org/weather-conditions
 01n clear sky night Moon
 
 **********************************************************
- 
+
  End API Docs
 
 *********************************************************/
