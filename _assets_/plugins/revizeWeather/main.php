@@ -2,11 +2,8 @@
 // error_reporting(E_ALL);ini_set('display_errors', 1);
 require_once __DIR__."/class/OpenWeatherMapWidget.php";
 require_once __DIR__."/config.php";
-<<<<<<< HEAD
-header('Content-Type: application/json');
-=======
+
 header('Content-Type: application/json; charset=UTF-8');
->>>>>>> 9ab05ee40cc795093f988ad9d7eac5262abf5b50
 
 /******************
 
