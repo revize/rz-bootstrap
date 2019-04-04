@@ -216,7 +216,7 @@
 		$(this).parent().addClass('current');
 
 		var currentTab = $(this).attr('href');
-		
+
 		e.preventDefault();
 		$(currentTab).addClass('current animated fadeInLeft');
 		$(currentTab).find('h2').focus();
@@ -272,6 +272,10 @@
 	if(typeof $.fn.owlCarousel !== "undefined"){
 		$("#owl-slider").owlCarousel();
 	}
+
+	// Responsive Tables
+	$('.post table:not(.layout-table):not(.not-responsive)').wrap('<div class="table-responsive"></div>');
+	$('.layout-table').attr('role', 'presentation');
 
 	// Preloader
 	$window.load(function() {

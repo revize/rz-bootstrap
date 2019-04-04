@@ -325,6 +325,7 @@ body{overflow-x:hidden}
 @media only screen and (min-width:992px) {
 
 		#flyout,#nav{display:block!important}
+		.layout-table{table-layout:fixed;width:100%}
 
 }
 
@@ -362,6 +363,16 @@ body{overflow-x:hidden}
 	#flyout ul a,
 	#flyout ul span{width:100%}
 	#flyout li:hover > ul{display:none}
+
+	/* Allows tables to be used as columns with responsive stacking */
+	.layout-table{width:100%!important}
+	.layout-table,
+	.layout-table thead,
+	.layout-table tbody,
+	.layout-table th,
+	.layout-table td,
+	.layout-table tr{display:block!important}
+	.layout-table td{margin-bottom:15px}
 
 }
 
