@@ -2,7 +2,7 @@
 require_once "Widget.php";
 class OpenWeatherMapWidget extends Widget {
 
-	protected $apiURI = "http://api.openweathermap.org/data/2.5/weather?";
+	protected $apiURI = "https://api.openweathermap.org/data/2.5/weather?";
 	protected $defaultApiUnit = "k";
 	protected $apiCall;
 	protected $cacheFile;
