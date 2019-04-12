@@ -214,25 +214,19 @@
 				<div class="share-btns">
 					<p>Share this page on your favorite Social network</p>
 					<div class="row">
-						<div class="col-md-3 col-xs-6">
+						<div class="col-sm-4">
 							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-facebook"></i> Facebook
 							</a>
 						</div>
-						<div class="col-md-3 col-xs-6">
+						<div class="col-sm-4">
 							<a href="https://www.twitter.com/home?status=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-twitter"></i> Twitter
 							</a>
 						</div>
-						<div class="col-md-3 col-xs-6">
-							<a href="https://www.plus.google.com/share?url=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-google" onclick="return !window.open(this.href, 'google ', 'width=500,height=500')"
-							target="_blank">
-								<i class="fa fa-google-plus"></i> Google Plus
-							</a>
-						</div>
-						<div class="col-md-3 col-xs-6">
+						<div class="col-sm-4">
 							<a href="https://www.reddit.com/submit?url=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-reddit"></i> Reddit
