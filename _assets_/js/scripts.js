@@ -146,35 +146,31 @@
 		}
 	});
 
-	// start calendar resize handler
-	function resizeIframe(height) {
-		var iFrameID = document.getElementById('calendar');
-		if(iFrameID) {
-				// here you can set the height, I delete it first, then I set it again
-				iFrameID.height = "";
-				iFrameID.height = height;
-		}
-		console.log("height to: " + height);
-	}
-	var eventMethod = window.addEventListener
-	? "addEventListener"
-	: "attachEvent";
-	var eventHandler = window[eventMethod];
-	var messageEvent = eventMethod === "attachEvent"
-		? "onmessage"
-		: "message";
-	eventHandler(messageEvent, function (e) {
-
-		if( e.data && e.data[0] === "setCalHeight" )
-		{
-			if(typeof resizeIframe === 'function'){
-				resizeIframe(e.data[1]);
-			}
-
-		}
-
+	// Make sure all calendars have unique ids
+	$('iframe[name="calendar"]').each(function (index, calendar) {
+		calendar.id = 'calendar-' + index;
 	});
-	// end calendar resize handler
+
+	// Start Frame Resizer
+	function resizeIframe(height, frameElement) {
+		if ( frameElement ) {
+			frameElement.height = "";
+			frameElement.height = height;
+		}
+		console.log(frameElement.id + ' Height to: ' + height);
+	}
+
+	var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+	var eventHandler = window[eventMethod];
+	var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+	eventHandler(messageEvent, function (e) {
+		if ( Array.isArray(e.data) ) {
+			if( e.data[0] === "setCalHeight" || e.data[0] === "setNotifyHeight") {
+				resizeIframe(e.data[1], e.source.frameElement);
+			}
+		}
+	});
+	// End Frame Resizer
 
 	// revizeWeather
 	if( typeof $.fn.revizeWeather !== "undefined" ){
