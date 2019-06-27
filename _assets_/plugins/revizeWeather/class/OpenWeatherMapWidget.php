@@ -2,7 +2,7 @@
 require_once "Widget.php";
 class OpenWeatherMapWidget extends Widget {
 
-	protected $apiURI = "http://api.openweathermap.org/data/2.5/weather?";
+	protected $apiURI = "https://api.openweathermap.org/data/2.5/weather?";
 	protected $defaultApiUnit = "k";
 	protected $apiCall;
 	protected $cacheFile;
@@ -84,8 +84,8 @@ class OpenWeatherMapWidget extends Widget {
 		$common['sea_level'] = isset($response->main->sea_level) ? $response->main->sea_level : "";
 		$common['ground_level'] = isset($response->main->grnd_level) ? $response->main->grnd_level : "";
 		$common['wind'] = array(
-			"speed" => $response->wind->speed,
-			"deg" => $response->wind->deg
+			"speed" => isset($response->wind->speed) ? $response->wind->speed : "",
+			"deg" => isset($response->wind->deg) ? $response->wind->deg : ""
 		);
 		$common['clouds'] = isset($response->clouds->all) ? $response->clouds->all : "";
 		$common['dt'] = isset($response->dt) ? $response->dt : "";

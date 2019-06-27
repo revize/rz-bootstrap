@@ -53,10 +53,9 @@ hr{border:solid #ccc;border-width:1px 0 0;clear:both;margin:10px 0 30px;height:0
 #links
 
 -----------------------------------------*/
-a,a:visited{color:#0f99ee;text-decoration:underline;
+a,a:visited{text-decoration:underline;
 -webkit-transition:color .3s ease;-moz-transition:color .3s ease;-o-transition:color .3s ease;transition:color .3s ease;
 -webkit-transition:background .3s ease;-moz-transition:background .3s ease;-o-transition:background .3s ease;transition:background .3s ease}
-a:hover,a:focus{color:#0f99ee}
 p a,p a:visited{line-height:inherit}
 
 /* -----------------------------------------
@@ -325,6 +324,7 @@ body{overflow-x:hidden}
 @media only screen and (min-width:992px) {
 
 		#flyout,#nav{display:block!important}
+		.layout-table{table-layout:fixed;width:100%}
 
 }
 
@@ -362,6 +362,16 @@ body{overflow-x:hidden}
 	#flyout ul a,
 	#flyout ul span{width:100%}
 	#flyout li:hover > ul{display:none}
+
+	/* Allows tables to be used as columns with responsive stacking */
+	.layout-table{width:100%!important}
+	.layout-table,
+	.layout-table thead,
+	.layout-table tbody,
+	.layout-table th,
+	.layout-table td,
+	.layout-table tr{display:block!important}
+	.layout-table td{margin-bottom:15px}
 
 }
 

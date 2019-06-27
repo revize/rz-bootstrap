@@ -22,17 +22,6 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="_assets_/images/touch-icon-iphone4.png">
 	<link rel="apple-touch-icon" sizes="144x144" href="_assets_/images/touch-icon-ipad2.png">
 
-	<!--[if !IE]><!-->
-	<link rel="stylesheet" href="_assets_/plugins/add-to-homescreen/style/addtohomescreen.css">
-	<script src="_assets_/plugins/add-to-homescreen/src/addtohomescreen.min.js"></script>
-	<script>addToHomescreen();</script>
-	<!--<![endif]-->
-
-	<!-- Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 </head>
 <body id="homepage">
 
@@ -195,6 +184,7 @@
 
 
 <!-- Share widget make into an include file -->
+<?php define('PAGE_PROTOCOL', (isset($_SERVER['https']) && $_SERVER['https'] === 'on') ? 'https' : 'http' ); ?>
 <button type="button" class="share-btn floating-share-btn" data-toggle="modal" data-target="#shareModal">
 	<i class="fa fa-share-alt"></i>
 </button>
@@ -214,26 +204,20 @@
 				<div class="share-btns">
 					<p>Share this page on your favorite Social network</p>
 					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
+						<div class="col-sm-4">
+							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-facebook"></i> Facebook
 							</a>
 						</div>
-						<div class="col-md-3 col-xs-6">
-							<a href="https://www.twitter.com/home?status=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
+						<div class="col-sm-4">
+							<a href="https://www.twitter.com/home?status=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-twitter"></i> Twitter
 							</a>
 						</div>
-						<div class="col-md-3 col-xs-6">
-							<a href="https://www.plus.google.com/share?url=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-google" onclick="return !window.open(this.href, 'google ', 'width=500,height=500')"
-							target="_blank">
-								<i class="fa fa-google-plus"></i> Google Plus
-							</a>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<a href="https://www.reddit.com/submit?url=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
+						<div class="col-sm-4">
+							<a href="https://www.reddit.com/submit?url=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
 							target="_blank">
 								<i class="fa fa-reddit"></i> Reddit
 							</a>
