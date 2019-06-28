@@ -268,6 +268,14 @@
 	if(typeof $.fn.owlCarousel !== "undefined"){
 		$("#owl-slider").owlCarousel();
 	}
+	
+	// Skip to Content
+	$('#skip').click(function(e){
+        e.preventDefault();
+		$("#main").attr("tabindex","-1");
+		$("#main").focus();
+		$("#main").removeAttr("tabindex");
+	});
 
 	// Responsive Tables
 	$('.post table:not(.layout-table):not(.not-responsive)').wrap('<div class="table-responsive"></div>');
