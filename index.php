@@ -27,20 +27,21 @@
 
 <div id="loader-wrapper"><img src="_assets_/images/ripple.gif" alt="Loading..."></div><!-- /.loader-wrapper -->
 
-<div class="main-wrap">
+<a href="#main" id="skip">Skip to main content</a>
+
+<header>
 	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
 
-		<header>
-			<div class="row">
+				<div id="toggles" class="hidden-lg hidden-md">
+					<div id="search-toggle" class="fa fa-search"></div>
+					<div id="nav-toggle" class="fa fa-bars"></div>
+				</div>
 
-				<div class="col-md-12">
-					<div class="page-header"><h2>Sample Header plus nav</h2></div><!-- /.page-header -->
-				</div><!-- /.col-md-12 -->
+				<a href="./" id="logo"></a>
 
-				<div id="header" class="col-md-12 clearfix">
-
-					<a href="" class="logo"><h1 class="h4">Logo</h1></a>
-
+				<nav id="topnav">
 					<ul id="nav">
 						<li><a href="">Home</a></li>
 						<li><a href="">Departments</a>
@@ -103,84 +104,79 @@
 							</ul>
 						</li>
 					</ul>
+				</nav><!-- /#topnav -->
 
-					<div id="search">
-						<form class="search-form" method="get" action="search.php">
-							<label class="fa fa-search" for="search-input"></label>
-							<input name="q" class="form-control search-input" placeholder="Enter search terms..." type="search" id="search-input">
-							<button>Go</button>
-						</form>
-					</div><!-- /#search -->
-
-				</div><!-- /#header -->
-			</div><!-- /.row -->
-		</header>
-
-		<div class="weather">
-			<div id="weather"></div><!-- /#weather -->
-		</div><!-- /.weather -->
-
-		<div class="row">
-			<div class="col-md-12">
-
-				<div id="slider">
-					<ul class="bxslider">
-					  <li style="background:url('_assets_/images/slide1.jpg') center no-repeat;background-size:cover"></li>
-					  <li style="background:url('_assets_/images/slide2.jpg') center no-repeat;background-size:cover"></li>
-					</ul>
-				</div><!-- /#slider -->
+				<div id="search">
+					<form class="search-form" method="get" action="search.php">
+						<label class="fa fa-search" for="search-input"></label>
+						<input name="q" class="form-control search-input" placeholder="Enter search terms..." type="search" id="search-input">
+						<button>Go</button>
+					</form>
+				</div><!-- /#search -->
 
 			</div><!-- /.col-md-12 -->
 		</div><!-- /.row -->
-
-		<div class="row">
-			<div class="col-md-6">
-				<div id="instafeed"></div>
-			</div><!-- /.col-md-12 -->
-			<div class="col-md-6">
-				<div id="twitterfeed"></div>
-			</div><!-- /.col-md-12 -->
-		</div><!-- /.row -->
-
-		<div class="row ">
-			<div class="col-md-6 col1">
-				<h2>City Newsletter</h2>
-                <form class="signup submission" id="newletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
-					<input type="email" name="femail" placeholder="Enter your email address" required>
-					<button>Sign Up</button>
-				</form>
-			</div><!-- /.col-md-6 -->
-
-			<div class="col-md-6">
-				<h2>Stay Updated</h2>
-				<form action="enotify/index.php" id="enotify-signup" class="signup clearfix">
-					<input type="email" name="email" placeholder="Enter your email address" required>
-					<button>Sign Up</button>
-				</form>
-			</div><!-- /.col-md-6 -->
-		</div><!-- /.row -->
-
 	</div><!-- /.container -->
+</header>
 
-	<footer id="footer">
+<div class="weather">
+	<div id="weather"></div><!-- /#weather -->
+</div><!-- /.weather -->
 
-		<span id="revize-login">
-			<span class="powered-by-revize">
-				Powered By <a id="powered-by-revize-link" target="_blank" href="http://www.revize.com">Revize</a>
-			</span>
-			<a id="revize-login-link" href="">Login</a>
+<section id="slider" role="complementary">
+	<ul class="bxslider">
+	  <li style="background:url('_assets_/images/inner-slide-1.jpg') center no-repeat;background-size:cover"></li>
+	  <li style="background:url('_assets_/images/inner-slide-2.jpg') center no-repeat;background-size:cover"></li>
+	</ul><!--/.bxslider-->
+</section><!--/#slider-->
+
+<main id="main">
+	<div class="row">
+		<div class="col-md-6">
+			<div id="instafeed"></div>
+		</div><!-- /.col-md-12 -->
+		<div class="col-md-6">
+			<div id="twitterfeed"></div>
+		</div><!-- /.col-md-12 -->
+	</div><!-- /.row -->
+
+	<div class="row ">
+		<div class="col-md-6 col1">
+			<h2>City Newsletter</h2>
+			<form class="signup submission" id="newletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
+				<input type="email" name="femail" placeholder="Enter your email address" required>
+				<button>Sign Up</button>
+			</form>
+		</div><!-- /.col-md-6 -->
+
+		<div class="col-md-6">
+			<h2>Stay Updated</h2>
+			<form action="enotify/index.php" id="enotify-signup" class="signup clearfix">
+				<input type="email" name="email" placeholder="Enter your email address" required>
+				<button>Sign Up</button>
+			</form>
+		</div><!-- /.col-md-6 -->
+	</div><!-- /.row -->
+
+</main><!-- /#main -->
+
+<footer id="footer">
+
+	<span id="revize-login">
+		<span class="powered-by-revize">
+			Powered By <a id="powered-by-revize-link" target="_blank" href="http://www.revize.com">Revize</a>
 		</span>
+		<a id="revize-login-link" href="">Login</a>
+	</span>
 
-	</footer><!-- /#footer -->
+</footer><!-- /#footer -->
 
-	<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h1>Alert Title 30 characters Max</h1>
-		<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
-		<p><a href="#" class="btn">Read More</a></p>
-	</div><!-- /.alert -->
-
-</div><!-- /.main-wrap -->
+<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<h1>Alert Title 30 characters Max</h1>
+	<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
+	<p><a href="#" class="btn">Read More</a></p>
+</div><!-- /.alert -->
 
 
 <!-- Share widget make into an include file -->
@@ -230,7 +226,6 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- Share widget make into an include file -->
-
 
 <script src="_assets_/js/jquery.min.js"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>
