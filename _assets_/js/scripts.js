@@ -111,29 +111,6 @@
 	}
 	addNavClass();
 	$window.resize(addNavClass);
-	// $('.toggle').on('click keydown', function(e) {
-	// 	if (e.keyCode === 13 || e.type === 'click') {
-	// 		e.preventDefault();
-	// 		if ($(this).parent().next('.first-level').is(':visible')) {
-	// 			$(this).parent().next('.first-level').slideUp();
-	// 		} else {
-	// 			$('.first-level').slideUp('slow');
-	// 			$(this).parent().next('.first-level').slideToggle();
-	// 		}
-	// 	}
-	// });
-
-	// $('.toggle2').on('click keydown', function(e) {
-	// 	if (e.keyCode === 13 || e.type === 'click') {
-	// 		e.preventDefault();
-	// 		if ($(this).parent().next('.second-level').is(':visible')) {
-	// 			$(this).parent().next('.second-level').slideUp();
-	// 		} else {
-	// 			$('.second-level').slideUp('slow');
-	// 			$(this).parent().next('.second-level').slideToggle();
-	// 		}
-	// 	}
-	// });
 
 	$(".toggle").on("click keydown",function(e) {
 		if (e.keyCode === 13 || e.type === 'click') {
@@ -173,35 +150,6 @@
 			}
 		});
 
-	// Flyout
-	// var flyout = $('#flyout'),
-	// 	flyoutwrap = $('#flyout-wrap');
-
-	// if (flyout.text().length){
-	// 	flyoutwrap.prepend('<div id="flyout-toggle"><i class="fa fa-bars"></i> Sub Menu</div>');
-	// }
-
-	// $("#flyout-toggle").on("click", function(){
-	// 	flyout.slideToggle();
-	// 	$(this).toggleClass("active");
-	// });
-
-	// $("#flyout li:has(ul)").children("a,span").append('<i class="fa fa-angle-down toggle-children">');
-	// $("#flyout ul").addClass('flyout-children');
-
-	// var flyoutChildren = $('.flyout-children');
-
-	// $(".toggle-children").on('click keypress', function(e) {
-	// 	if (e.keyCode === 13 || e.type === 'click') {
-	// 		e.preventDefault();
-	// 		if($(this).parent().next(flyoutChildren).is(":visible")){
-	// 			$(this).parent().next(flyoutChildren).slideUp();
-	// 		} else {
-	// 			$(flyoutChildren).slideUp("slow");
-	// 			$(this).parent().next(flyoutChildren).slideToggle();
-	// 		}
-	// 	}
-	// });
 
 	// Make sure all calendars have unique ids
 	$('iframe[name="calendar"]').each(function (index, calendar) {
