@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>SiteName</title>
 	<meta name="description" content="">
@@ -43,81 +43,81 @@
 
 				<nav id="topnav">
 					<ul id="nav">
-						<li><a href="">Home</a></li>
-						<li><a href="">Departments</a>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Departments</a>
 							<ul>
-								<li><a href="">Management</a>
+								<li><a href="#">Management</a>
 									<ul>
-										<li><a href="">Management</a></li>
-										<li><a href="">Finance</a></li>
-										<li><a href="">Planning</a></li>
-										<li><a href="">Public Works</a></li>
-										<li><a href="">Police</a></li>
-										<li><a href="">Fire / EMS</a></li>
-										<li><a href="">Libraries</a></li>
-										<li><a href="">Education</a></li>
-										<li><a href="">Parks &amp; Recreation</a></li>
-										<li><a href="">Information Technology</a></li>
+										<li><a href="#">Management</a></li>
+										<li><a href="#">Finance</a></li>
+										<li><a href="#">Planning</a></li>
+										<li><a href="#">Public Works</a></li>
+										<li><a href="#">Police</a></li>
+										<li><a href="#">Fire / EMS</a></li>
+										<li><a href="#">Libraries</a></li>
+										<li><a href="#">Education</a></li>
+										<li><a href="#">Parks &amp; Recreation</a></li>
+										<li><a href="#">Information Technology</a></li>
 									</ul>
 								</li>
-								<li><a href="">Finance</a></li>
-								<li><a href="">Planning</a></li>
-								<li><a href="">Public Works</a></li>
-								<li><a href="">Police</a></li>
-								<li><a href="">Fire / EMS</a></li>
-								<li><a href="">Libraries</a></li>
-								<li><a href="">Education</a></li>
-								<li><a href="">Parks &amp; Recreation</a></li>
-								<li><a href="">Information Technology</a></li>
+								<li><a href="#">Finance</a></li>
+								<li><a href="#">Planning</a></li>
+								<li><a href="#">Public Works</a></li>
+								<li><a href="#">Police</a></li>
+								<li><a href="#">Fire / EMS</a></li>
+								<li><a href="#">Libraries</a></li>
+								<li><a href="#">Education</a></li>
+								<li><a href="#">Parks &amp; Recreation</a></li>
+								<li><a href="#">Information Technology</a></li>
 							</ul>
 						</li>
-						<li><a href="">About</a>
+						<li><a href="#">About</a>
 							<ul>
-								<li><a href="">About The Area</a></li>
-								<li><a href="">Maps</a></li>
-								<li><a href="">Links</a></li>
-								<li><a href="">Photos</a></li>
+								<li><a href="#">About The Area</a></li>
+								<li><a href="#">Maps</a></li>
+								<li><a href="#">Links</a></li>
+								<li><a href="#">Photos</a></li>
 							</ul>
 						</li>
 						<li><span>Information</span>
 							<ul>
 								<li><span>How Do I?</span>
 									<ul>
-										<li><a href="">Management</a></li>
-										<li><a href="">Finance</a></li>
-										<li><a href="">Planning</a></li>
-										<li><a href="">Public Works</a></li>
-										<li><a href="">Police</a></li>
-										<li><a href="">Fire / EMS</a></li>
-										<li><a href="">Libraries</a></li>
-										<li><a href="">Education</a></li>
-										<li><a href="">Parks &amp; Recreation</a></li>
-										<li><a href="">Information Technology</a></li>
+										<li><a href="#">Management</a></li>
+										<li><a href="#">Finance</a></li>
+										<li><a href="#">Planning</a></li>
+										<li><a href="#">Public Works</a></li>
+										<li><a href="#">Police</a></li>
+										<li><a href="#">Fire / EMS</a></li>
+										<li><a href="#">Libraries</a></li>
+										<li><a href="#">Education</a></li>
+										<li><a href="#">Parks &amp; Recreation</a></li>
+										<li><a href="#">Information Technology</a></li>
 									</ul>
 								</li>
-								<li><a href="">Contact Us</a></li>
-								<li><a href="">News</a></li>
-								<li><a href="">Announcements</a></li>
-								<li><a href="">Jobs</a></li>
-								<li><a href="">Minutes</a></li>
-								<li><a href="">RFP's</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">News</a></li>
+								<li><a href="#">Announcements</a></li>
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Minutes</a></li>
+								<li><a href="#">RFP's</a></li>
 							</ul>
 						</li>
 					</ul>
 				</nav><!-- /#topnav -->
 
-				<div id="search">
+			</div><!-- /.col-md-12 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</header>
+
+<div id="search">
 					<form class="search-form" method="get" action="search.php">
 						<label class="fa fa-search" for="search-input"></label>
 						<input name="q" class="form-control search-input" placeholder="Enter search terms..." type="search" id="search-input">
 						<button>Go</button>
 					</form>
 				</div><!-- /#search -->
-
-			</div><!-- /.col-md-12 -->
-		</div><!-- /.row -->
-	</div><!-- /.container -->
-</header>
 
 <div class="weather">
 	<div id="weather"></div><!-- /#weather -->
@@ -181,7 +181,7 @@
 
 <!-- Share widget make into an include file -->
 <?php define('PAGE_PROTOCOL', (isset($_SERVER['https']) && $_SERVER['https'] === 'on') ? 'https' : 'http' ); ?>
-<button type="button" class="share-btn floating-share-btn" data-toggle="modal" data-target="#shareModal">
+<button type="button" class="share-btn floating-share-btn" data-toggle="modal" aria-label="Share this page" data-target="#shareModal">
 	<i class="fa fa-share-alt"></i>
 </button>
 
