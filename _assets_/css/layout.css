@@ -196,10 +196,10 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 -----------------------------------------*/
 #loader-wrapper{position:fixed;top:0;right:0;bottom:0;left:0;background:#233447;z-index:99999;display:none!important}
-#loader-wrapper img{width:60px;position:absolute;top:50%;left:50%;margin:-30px 0 0 -30px;	animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation;-webkit-animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation}
+#loader-wrapper img{width:60px;position:absolute;top:50%;left:50%;margin:-30px 0 0 -30px;animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation;-webkit-animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation}
 @keyframes spinning_animation {
-	0%{transform:scale(1) rotate(0deg);-o-transformscale(1) rotate(0deg)}
-	50%{transform:scale(0.8) rotate(360deg);-o-transformscale(0.8) rotate(360deg)}
+	0%{transform:scale(1) rotate(0deg);-o-transform:scale(1) rotate(0deg)}
+	50%{transform:scale(0.8) rotate(360deg);-o-transform:scale(0.8) rotate(360deg)}
 	100%{transform:scale(1) rotate(720deg);-o-transform:scale(1) rotate(720deg)}
 }
 @-webkit-keyframes spinning_animation {
@@ -324,6 +324,7 @@ body{overflow-x:hidden}
 @media only screen and (min-width:992px) {
 
 		#flyout,#nav{display:block!important}
+		.layout-table{table-layout:fixed;width:100%}
 
 }
 
@@ -361,6 +362,16 @@ body{overflow-x:hidden}
 	#flyout ul a,
 	#flyout ul span{width:100%}
 	#flyout li:hover > ul{display:none}
+
+	/* Allows tables to be used as columns with responsive stacking */
+	.layout-table{width:100%!important}
+	.layout-table,
+	.layout-table thead,
+	.layout-table tbody,
+	.layout-table th,
+	.layout-table td,
+	.layout-table tr{display:block!important}
+	.layout-table td{margin-bottom:15px}
 
 }
 
