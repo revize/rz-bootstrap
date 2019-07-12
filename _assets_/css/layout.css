@@ -1,18 +1,24 @@
 /*-----------------------------------------------------------------------------------
 
-	Theme Name: SiteName
-	Author Design: Samir Alley @samiralley | Tom Gooden @good3n
+	Theme Name: Site Name
+	Front-end developer: Richard Opiniano | Kevin Nowalski | Chris Yang | Omar Baig | Justin Kunnummyalil | Hayk Galoyan
+	Author Design: Samir Alley @samiralley | Alex Parent | Ying Liu | Kat Wiard | Nasryn Abou-Arabi
 	Author URI: http://www.revize.com/
-	Date: MONTH DAY, 2015
+	Date: mm/dd/yyyy
 
 -----------------------------------------------------------------------------------*/
+/* -----------------------------------------
+
+#fonts
+
+-----------------------------------------*/
 
 /* -----------------------------------------
 
 #basic styles
 
 -----------------------------------------*/
-body{background:#fff;font-size:14px;line-height:1.6;font-family:sans-serif;color:#444;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}
+body{background:#fff;font-size:14px;line-height:1.6;font-family:sans-serif;color:#444;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;overflow-x:hidden;top:0!important}
 
 /* -----------------------------------------
 
@@ -106,7 +112,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-.btn{padding:10px 20px;background:#0f99ee;color:#fff!important;border:0;border-radius:0;display:inline-block;font-size:12px;font-weight:900!important;text-decoration:none;cursor:pointer;line-height:normal;vertical-align:top;font-family:sans-serif;text-transform:uppercase;transition:background .3s}
+.btn{padding:10px 20px;background:#0f99ee;color:#fff!important;border:0;border-radius:0;display:inline-block;font-size:12px;font-weight:700!important;text-decoration:none;cursor:pointer;line-height:normal;vertical-align:top;font-family:sans-serif;text-transform:uppercase;transition:all .3s}
 .button:hover,
 a.button:hover,
 button:hover,
@@ -180,8 +186,8 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 -----------------------------------------*/
 .floating-alert{position:fixed;z-index:99999;bottom:10px;margin:0;right:10px;border:3px solid #fff;background:#000;background:rgba(0,0,0,.9);box-shadow:0 0 10px rgba(0,0,0,.2);color:#fff;padding:30px;font-size:14px;width:350px;}
-.floating-alert h1{color:#ffc140;margin:0 0 10px;font-family:sans-serif;font-weight:bold;text-transform:uppercase;font-size:18px}
-.floating-alert .btn{padding:8px 10px;margin:20px 0 0 0!important}
+.floating-alert h2{color:#ffc140;margin:0 0 10px;font-family:sans-serif;font-weight:bold;text-transform:uppercase;font-size:18px}
+.floating-alert .btn{margin:20px 0 0 0!important}
 .floating-alert .close{padding:0;background:none!important;color:#fff!important;opacity:1;margin-right:20px}
 
 /* -----------------------------------------
@@ -192,68 +198,45 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 /* -----------------------------------------
 
-#loader
-
------------------------------------------*/
-#loader-wrapper{position:fixed;top:0;right:0;bottom:0;left:0;background:#233447;z-index:99999;display:none!important}
-#loader-wrapper img{width:60px;position:absolute;top:50%;left:50%;margin:-30px 0 0 -30px;animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation;-webkit-animation:2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation}
-@keyframes spinning_animation {
-	0%{transform:scale(1) rotate(0deg);-o-transform:scale(1) rotate(0deg)}
-	50%{transform:scale(0.8) rotate(360deg);-o-transform:scale(0.8) rotate(360deg)}
-	100%{transform:scale(1) rotate(720deg);-o-transform:scale(1) rotate(720deg)}
-}
-@-webkit-keyframes spinning_animation {
-	0%{-webkit-transform:scale(1) rotate(0deg)}
-	50%{-webkit-transform:scale(0.8) rotate(360deg)}
-	100%{-webkit-transform:scale(1) rotate(720deg)}
-}
-
-/* -----------------------------------------
-
 #main
 
 -----------------------------------------*/
-body{overflow-x:hidden}
-.text-overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#nav-toggle,
-.toggle,
-.toggle2{display:none}
-
-/* Don't forget to accout for span being used in space of a tag for nav items that are not links */
-/*for mega menu addjust as needed*/
-.nav>li>ul {
-    -moz-column-count: 4;
-    -moz-column-gap: 40px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 40px;
-    column-count: 4;
-    column-gap: 40px;
-    padding:40px
-}
-.nav>li>ul li{display:inline-block;width:100%}
-.nav>li>ul li a{display:block}
-/*for mega menu addjust as needed*/
-
+#skip{position:fixed;left:-100%;top:-100%;transition:all .3s;z-index:999}
+#skip:focus{left:50px;top:50px}
 #calendarEvent{left:0px;max-height:500px;overflow-y:auto;margin:0 auto}
+.text-overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toggle{display:none}
 
+header{position:relative;z-index:200}
+
+#nav{padding:0;margin:0}
+#nav li{position:relative;margin:0;display:inline-block}
+#nav a,
+#nav span{display:block;font-size:18px}
+#nav ul{padding:0;margin:0;display:none}
+#nav ul a,
+#nav ul span{font-size:16px;padding:10px 15px}
+
+#twitterfeed{background:#f1f1f1}
+.goog-te-banner-frame{display:none}
+#translation-links{padding:0;margin:0}
+#translation-links li{position:relative;margin:0;list-style:none}
+#translation-links ul{padding:30px;margin:0;position:absolute;top:100%;right:0;width:700px;background:#fff}
+#translation-links ul li{float:left;width:25%;padding-right:15px;padding:5px 15px 5px 0}
 /* -----------------------------------------
 
 #inner
 
 -----------------------------------------*/
-#flyout{margin:0;padding:0}
-#flyout li{margin:0;display:block;position:relative}
+#flyout{padding:0;margin:0}
+#flyout li{position:relative;margin:0;list-style:none}
 #flyout a,
-#flyout span{text-decoration:none;padding:15px 20px;display:block;border-bottom:1px solid #000}
-#flyout ul{display:none;position:absolute;top:0;left:100%;margin:0;padding:0;background:#aaa}
+#flyout span{display:block;text-decoration:none;font-size:18px}
+#flyout ul{padding:0;margin:0;display:none}
 #flyout ul a,
-#flyout ul span{font-size:13px;padding:10px 15px;width:180px}
-#flyout li:hover > ul{display:block}
-
+#flyout ul span{font-size:16px;padding:10px 15px}
 .breadcrumbs{font-size:13px;text-transform:capitalize}
-.breadcrumbs p{margin:0}
 .breadcrumbs a{text-decoration:none}
-.breadcrumbs i{font-size:13px;margin:0 4px}
 
 /* -----------------------------------------
 
@@ -280,20 +263,22 @@ body{overflow-x:hidden}
 .btn-google:hover{border-color:#D34836}
 .btn-reddit:hover{border-color:#ff5700}
 .btn-lg{font-size:16px;padding:14px 30px;border:0;border-radius:3px}
-.floating-share-btn{position:fixed;z-index:99999;top:40%;right:0;height:50px;width:50px;border-radius:0;border:0;background:#F26A39!important;color:#fff!important;line-height:50px;padding:0;box-shadow:0 0 10px rgba(0,0,0,.3);text-align:center}
-
+.floating-share-btn{position:fixed;z-index:99999;top:40%;right:0;border-radius:0;border:0;background:#F26A39!important;color:#fff!important;padding:8px;box-shadow:0 0 10px rgba(0,0,0,.3);text-align:center}
+.floating-share-btn span{display:block;margin-top:5px;text-transform:uppercase}
 /* -----------------------------------------
 
 #bxslider
 
 -----------------------------------------*/
+#slider{height:500px;position:relative}
+#slider-caption{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:51}
+.bxslider{padding:0;margin:0}
 .bxslider,
 .bx-viewport,
 .bxslider li,
 .bx-wrapper{height:100%!important}
 
-.bx-wrapper{position:relative;margin:0;padding:0;*zoom:1;overflow:hidden}
-.bx-wrapper *{margin:0;padding:0}
+.bx-wrapper{position:relative;margin:0;padding:0;overflow:hidden}
 .bx-wrapper img{max-width:100%;display:block}
 
 .bxslider{list-style:none}
@@ -302,7 +287,7 @@ body{overflow-x:hidden}
 /* pager */
 .bx-wrapper .bx-pager{text-align:center}
 .bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item{display:inline-block;*zoom:1;*display:inline}
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item{display:inline-block}
 .bx-wrapper .bx-pager.bx-default-pager a{background:#666;text-indent:-9999px;display:block;width:10px;height:10px;margin:0 5px;outline:0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active{background:#000}
@@ -322,47 +307,25 @@ body{overflow-x:hidden}
 
 -----------------------------------------*/
 @media only screen and (min-width:992px) {
+	#nav .focused .toggle,#nav .focused .toggle2,#flyout .focused .toggle{display:inline-block;margin-left:8px}
+	#flyout .focused .toggle,#nav .focused .toggle2{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}
+	#flyout,#nav{display:block!important}
+	.layout-table{table-layout:fixed;width:100%}
+	#nav ul{position:absolute;left:0;top:100%;width:200px;background:#fff;display:none}
+	#nav li:hover>ul{display:block}
+	#nav ul ul{left:100%;top:0}
 
-		#flyout,#nav{display:block!important}
-		.layout-table{table-layout:fixed;width:100%}
-
+	#flyout ul{position:absolute;left:100%;top:0;width:200px;background:#fff;display:none}
+	#flyout li:hover>ul{display:block}
 }
 
 @media only screen and (max-width:991px) {
-
 	/* rz form tables - without page scope this targets editforms and makes
 	 * editing confusing
 	 */
 	#freeform #formwizziwmorf tr,#freeform #formwizziwmorf tr td{display:block!important}
 	#freeform #formwizziwmorf tr table tr{display:table-row!important}
 	#freeform #formwizziwmorf tr table td{display:table-cell!important}
-
-	.toggle,
-	.toggle2,
-	#nav-toggle{display:inline-block;cursor:pointer}
-	.down-arrow{display:none} /* if not hidden above */
-	#nav{display:none}
-	#nav li{float:none;display:block}
-	#nav li a,
-	#nav li span{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
-	#nav ul{position:static;top:0;padding:0;background:rgba(0,0,0,.2)}
-	#nav li:hover > ul{display:none}
-	#nav ul a,
-	#nav ul span{width:100%}
-	#nav ul ul{left:0}
-	#nav .toggle,
-	#nav .toggle2{position:absolute;right:0;top:0;background:rgba(0,0,0,.2);height:55px;width:55px;line-height:55px;text-align:center}
-	#nav li li:hover > a{background:none;color:#fff}
-
-	#flyout{display:none}
-	#flyout li{}
-	#flyout li a,
-	#flyout li span{padding:20px 30px;line-height:1;border-bottom:1px solid rgba(0,0,0,.2);background:none;font-size:14px}
-	#flyout ul{position:static;left:0;padding:0;background:rgba(0,0,0,.2)}
-	#flyout ul a,
-	#flyout ul span{width:100%}
-	#flyout li:hover > ul{display:none}
-
 	/* Allows tables to be used as columns with responsive stacking */
 	.layout-table{width:100%!important}
 	.layout-table,
@@ -373,18 +336,33 @@ body{overflow-x:hidden}
 	.layout-table tr{display:block!important}
 	.layout-table td{margin-bottom:15px}
 
+	#toggles{position:absolute;right:15px;top:15px}
+	#nav-toggle,#search-toggle{line-height:45px;width:45px;text-align:center;border-radius:4px;background:#222;color:#fff;margin-left:5px}
+
+	#nav,#flyout{display:none}
+	#nav li{display:block}
+	#nav a,
+	#nav span,
+	#flyout a,
+	#flyout span{font-size:14px !important;line-height:1 !important;padding:15px !important;border-bottom:1px solid rgba(0,0,0,.15)}
+	#nav li:last-child>a,
+	#nav li:last-child>span,
+	#flyout li:last-child>a,
+	#flyout li:last-child>span{border:0}
+	#nav ul,
+	#flyout ul{background:rgba(0,0,0,.15)}
+	.toggle,
+	.toggle2{display:block;position:absolute;right:0;top:0;line-height:45px;text-align:center;width:45px;background:rgba(0,0,0,.15);transform:none !important}
 }
 
 	/* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width:767px) {
-
 	.floating-alert{width:auto;right:0;left:0;border:0;bottom:0;border-radius:0;padding-left:15px;padding-right:15px}
 	.floating-alert{font-size:12px}
-	.floating-alert h1{margin-bottom:10px;font-size:14px}
-	.floating-alert .btn{font-size:10px;padding:7px 12px!important}
+	.floating-alert h4{margin-bottom:10px;font-size:14px}
+	.floating-alert .btn{font-size:10px}
 	.share-btns a{height:auto;padding:10px;width:100%;font-size:12px;white-space:nowrap;overflow:hidden}
 	.share-btns i{display:block;line-height:50px!important;font-size:20px}
-
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -394,10 +372,6 @@ body{overflow-x:hidden}
 @media only screen and (max-width:479px) {}
 
 @media print {
-	.nav-wrap,
-	.sidebar,
-	#flyout-wrap,
-	.breadcrumbs
-	.e-notify{display:none!important}
+	#slider,footer,#breadcrumbs,#flyout-wrap,.floating-share-btn,.e-notify,header{display:none!important}
 	a[href]:after{content:none!important}
 }

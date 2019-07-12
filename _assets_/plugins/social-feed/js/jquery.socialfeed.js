@@ -513,7 +513,15 @@ if (typeof Object.create !== 'function') {
                             var authTokenParams = options.instagram.access_type + '=' + options.instagram[options.instagram.access_type];
                         }
 
-                        if (!jQuery.isArray(json.data)) json.data = [json.data]
+                        if (!jQuery.isArray(json.data)) {
+                            if (json.data) {
+                                json.data = [json.data];
+                            } else {
+                                console.log(this.url.match(/(.+\.com)/)[0] + " : ", json.meta);
+                                return;
+                            }
+                        }
+
                         json.data.forEach(function(user) {
                             var url = Feed.instagram.api + 'users/' + user.id + '/media/recent/?' + authTokenParams + '&' + 'count=' + options.instagram.limit + '&callback=?';
                             Utility.request(url, Feed.instagram.utility.getImages);
