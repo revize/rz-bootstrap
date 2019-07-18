@@ -48,12 +48,12 @@
 					<li><a href="./">Home</a></li>
 					<li><a href="./">Departments</a>
 						<ul>
-							<li><span href="./">First-level link</span></li>
+							<li><span>First-level link</span></li>
 							<li><a href="./">First-level link</a>
 								<ul>
 									<li><a href="/">Second-level link</a></li>
 									<li><a href="/">Second-level link</a></li>
-									<li><span href="/">Second-level link</span></li>
+									<li><span>Second-level link</span></li>
 									<li><a href="/">Second-level link</a></li>
 									<li><a href="/">Second-level link</a></li>
 								</ul>
@@ -70,7 +70,7 @@
 			<div class="col-md-3">
 				<div id="search">
 					<form class="search-form" method="GET" action="search.php" role="search" aria-label="sitewide">
-						<label class="fa fa-search" for="search-input"><div class="sr-only">Search</div></label>
+						<label class="fa fa-search" for="search-input"><span class="sr-only">Search</span></label>
 						<input name="q" class="form-control search-input" placeholder="Enter search terms..." type="search" id="search-input">
 						<button>Go</button>
 					</form>
@@ -87,18 +87,18 @@
 					<button type="button" id="increase-font"  class="fa fa-plus"><span class="sr-only">Increase font size</span></button>
 				</div><!--/#font-resizer-->
 				<div id="google-translate" class="hidden">
-					<script type="text/javascript">
+					<script>
 						function googleTranslateElementInit() {
 							new google.translate.TranslateElement({pagelanguage: 'en',
 								layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
 								'google-translate');
 						}
 					</script>
-					<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+					<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 				</div><!--/#google-translate.control.hidden-sm.hidden-xs-->
 				<ul id="translation-links">
-					<li><span tabindex="0" aria-label="translate website">Translate <i class="fa fa-angle-down"></i></span>
-						<ul class="clearfix">
+					<li><button type="button" id="translate-button" aria-label="translate website" aria-haspopup="true" aria-expanded="false">Translate <i class="fa fa-angle-down"></i></button>
+						<ul class="clearfix" aria-labelledby="translate-button">
 							<li><a href="#" class="Afrikaans" data-lang="Afrikaans">Afrikaans</a></li>
 							<li><a href="#" class="Albanian" data-lang="Albanian">Albanian</a></li>
 							<li><a href="#" class="Arabic" data-lang="Arabic">Arabic</a></li>
@@ -195,7 +195,7 @@
 </section><!--/#slider-->
 <main id="main">
 	<div class="container">
-		<div class="row">
+		<section class="row" aria-label="social media feeds">
 			<div class="col-md-4">
 				<div id="instagram-feed" class="fillLeft"></div>
 			</div><!--/.col-md-4-->
@@ -205,24 +205,26 @@
 			<div class="col-md-4">
 				<div id="twitterfeed" class="fillRight withPadding"></div>
 			</div><!--/.col-md-4-->
-		</div><!--/.row-->
+		</section><!--/.row-->
 		<div class="row">
-			<div class="col-md-6">
-				<h2>City Newsletter</h2>
-                <form class="signup submission" id="newsletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
-					<input type="email" name="femail" placeholder="Enter your email address" required>
+			<section class="col-md-6" aria-labelledby="newsletter-title">
+				<h2 id="newsletter-title">City Newsletter</h2>
+				<form class="signup submission" id="newsletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
+					<input type="email" name="femail" placeholder="Enter your email address" aria-label="email address" required>
 					<button>Sign Up</button>
 				</form><!--/.signup.submission#newsletter-signup-->
-			</div><!--/.col-md-6-->
-			<div class="col-md-6">
-				<h2>Stay Updated</h2>
+			</section><!--/.col-md-6-->
+			<section class="col-md-6" aria-labelledby="notify-title">
+				<h2 id="notify-title">Stay Updated</h2>
 				<form action="enotify/index.php" id="enotify-signup" class="signup clearfix">
-					<input type="email" name="email" placeholder="Enter your email address" required>
+					<input type="email" name="email" placeholder="Enter your email address" aria-label="email address" required>
 					<button>Sign Up</button>
 				</form><!--/.signup.clearfix#enotify-signup-->
-			</div><!--/.col-md-6-->
+			</section><!--/.col-md-6-->
 		</div><!--/.row-->
 	</div><!--/.container-->
+	<!-- ENABLERS: update include statement with revize code -->
+	<?php include "_includes_/share_widget.php"; ?>
 </main>
 <footer>
 	<div class="container">
@@ -237,61 +239,6 @@
 	</div><!--/.container-->
 </footer>
 
-<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h2>Alert Title 30 characters Max</h2>
-	<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
-	<p><a href="#" class="btn">Read More</a></p>
-</div><!-- /.alert -->
-
-<!-- Share widget make into an include file -->
-<?php define('PAGE_PROTOCOL', (isset($_SERVER['https']) && $_SERVER['https'] === 'on') ? 'https' : 'http' ); ?>
-<button type="button" class="share-btn floating-share-btn" data-toggle="modal" data-target="#shareModal">
-	<i class="fa fa-share-alt"></i>
-	<span>Share <div class="sr-only">this page</div></span>
-</button>
-
-<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Share this page</h4>
-			</div>
-			<div class="modal-body">
-				<div class="copylink">
-					<p>Copy and paste this code into your website.</p>
-					<pre>&lt;a href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">Your Link Name&lt;/a&gt;</pre>
-				</div><!-- /.copylink -->
-				<div class="share-btns">
-					<p>Share this page on your favorite Social network</p>
-					<div class="row">
-						<div class="col-sm-4">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
-							target="_blank">
-								<i class="fa fa-facebook"></i> Facebook
-							</a>
-						</div>
-						<div class="col-sm-4">
-							<a href="https://www.twitter.com/home?status=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
-							target="_blank">
-								<i class="fa fa-twitter"></i> Twitter
-							</a>
-						</div>
-						<div class="col-sm-4">
-							<a href="https://www.reddit.com/submit?url=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
-							target="_blank">
-								<i class="fa fa-reddit"></i> Reddit
-							</a>
-						</div>
-					</div><!-- /.row -->
-				</div><!-- /.share-btns -->
-				<button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Close</button>
-			</div><!-- /.modal-body -->
-		</div>
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- Share widget make into an include file -->
 
 <script src="_assets_/js/jquery.min.js"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>

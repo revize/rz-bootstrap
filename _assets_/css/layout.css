@@ -172,16 +172,6 @@ form.loginform label input{display:block;margin-bottom:10px;width:100%;box-sizin
 
 /* -----------------------------------------
 
-#rz notify
-
------------------------------------------*/
-.e-notify{font-weight:bold;font-size:12px;background:#E7DF7F;position:fixed;padding:3px 13px 2px;bottom:10px;left:10px;color:#111;border-radius:50px;text-transform:uppercase;z-index:999;overflow:hidden;box-shadow:0 0 10px rgba(0,0,0,.175)}
-.e-notify img{display:none}
-.e-notify i{margin-right:4px!important}
-.e-notify a{position:absolute;top:0;bottom:0;left:0;right:0}
-
-/* -----------------------------------------
-
 #rz alert
 
 -----------------------------------------*/
@@ -221,7 +211,7 @@ header{position:relative;z-index:200}
 .goog-te-banner-frame{display:none}
 #translation-links{padding:0;margin:0}
 #translation-links li{position:relative;margin:0;list-style:none}
-#translation-links ul{padding:30px;margin:0;position:absolute;top:100%;right:0;width:700px;background:#fff}
+#translation-links ul{padding:30px;margin:0;position:absolute;top:100%;right:0;width:700px;background:#fff;display:none}
 #translation-links ul li{float:left;width:25%;padding-right:15px;padding:5px 15px 5px 0}
 /* -----------------------------------------
 
@@ -243,6 +233,7 @@ header{position:relative;z-index:200}
 #share widget
 
 -----------------------------------------*/
+.modal{z-index:100000}
 .modal-content{overflow:hidden;box-shadow:none!important;border-radius:3px}
 .modal-header{background:#fff;border-color:#F4F9FD;text-align:center;padding:30px 60px;text-align:left}
 .modal-header h4{font-size:30px}
@@ -252,7 +243,7 @@ header{position:relative;z-index:200}
 .copylink pre{border-color:#DBE7F0;background:#F4F9FD;border-width:1px}
 .modal-header button,.modal-header button:hover{color:#000!important;background:none}
 .share-btns{margin:0 0 20px}
-.share-btns a{display:block;border:1px solid #DBE7F0;text-align:center;height:170px;border-radius:3px;vertical-align:top;overflow:hidden;text-decoration:none;margin-bottom:20px}
+.share-btns a{display:block;border:1px solid #DBE7F0;text-align:center;height:170px;border-radius:3px;overflow:hidden;text-decoration:none;margin-bottom:20px}
 .share-btns i{display:block;line-height:170px!important;font-size:60px}
 .btn-facebook{color:#3b5998!important}
 .btn-twitter{color:#00ACED!important}
@@ -315,7 +306,7 @@ header{position:relative;z-index:200}
 	#nav li:hover>ul{display:block}
 	#nav ul ul{left:100%;top:0}
 
-	#flyout ul{position:absolute;left:100%;top:0;width:200px;background:#fff;display:none}
+	#flyout ul{position:absolute;left:100%;top:0;width:200px;background:#fff;display:none;z-index:999}
 	#flyout li:hover>ul{display:block}
 }
 

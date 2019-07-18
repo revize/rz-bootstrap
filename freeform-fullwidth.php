@@ -25,8 +25,7 @@
 </head>
 <body id="freeform" class="fullwidth">
 
-	<!-- Content Here -->
-	<!-- NOTE: Test Flyout with a tags and spans just like the main nav. Cannot assume all items are links. -->
+	<!-- Content Here from freeform -->
 
 <script src="_assets_/js/jquery.min.js"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>

@@ -275,14 +275,17 @@
 		}
 	});
 
-	$('#translation-links span').on('keydown click', function(e){
+	var $translateButton = $('#translate-button');
+	$translateButton.on('keydown click', function(e){
 		if (e.keyCode === 13 || e.type === 'click') {
 			$('#translation-links ul').stop().fadeToggle();
+			$translateButton.attr('aria-expanded', !('true' === $translateButton.attr('aria-expanded')));
 		}
 	});
 
 	$('#translation-links ul').on('mouseleave',function(){
 		$(this).fadeOut();
+		$translateButton.attr('aria-expanded', false);
 	});
 
 	var translateURL = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
@@ -352,7 +355,8 @@
 		$('.bxslider').bxSlider({
 			mode:'fade',
 			auto:($('.bxslider').children().length < 2) ? false : true,
-			pager: false
+			pager: false,
+			pause: 8000
 		});
 	}
 
