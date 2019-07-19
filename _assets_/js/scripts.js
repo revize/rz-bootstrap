@@ -352,11 +352,13 @@
 
 	// bxSlider
 	if(typeof $.fn.bxSlider !== "undefined"){
-		$('.bxslider').bxSlider({
-			mode:'fade',
-			auto:($('.bxslider').children().length < 2) ? false : true,
-			pager: false,
-			pause: 8000
+		$('.bxslider').each(function(i, el){
+			$(el).bxSlider({
+				mode: 'fade',
+				auto: ($(el).children().length < 2) ? false : true,
+				pager: true,
+				pause: 8000
+			});
 		});
 	}
 
