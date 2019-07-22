@@ -367,14 +367,6 @@
 		$("#owl-slider").owlCarousel();
 	}
 
-	// Skip to Content
-	$('#skip').click(function(e){
-        e.preventDefault();
-		$("#main").attr("tabindex","-1");
-		$("#main").focus();
-		$("#main").removeAttr("tabindex");
-	});
-
 	// Responsive Tables
 	$('.post table:not(.layout-table):not(.not-responsive)').wrap('<div class="table-responsive"></div>');
 	$('.layout-table').attr('role', 'presentation');
@@ -451,7 +443,7 @@
 					});
 				}
 			}
-		});// TODO FIND MEEEE
+		});
 
 		/*global jQuery */
 		/*!

@@ -25,8 +25,6 @@
 </head>
 <body id="freeform">
 
-<a href="#main" id="skip">Skip to main content</a>
-
 <!-- REPLACE THIS COMMENT WITH HEADER -->
 
 <section id="slider" role="complementary" aria-label="page banner">

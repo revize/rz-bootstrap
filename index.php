@@ -24,16 +24,17 @@
 </head>
 <body id="homepage">
 
-<!-- TODO: test button smoothscroll -->
-<a href="#main" id="skip" tabindex="0" class="btn">Skip to main content</a>
-
 <header>
+
+	<a href="#main" id="skip" tabindex="0" class="btn">Skip to main content</a>
+
 	<!--<ul id="navicons" class="hidden">
 		<li><img src="_assets_/images/navicon-1.png" alt="1" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-2.png" alt="2" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-3.png" alt="3" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-4.png" alt="4" class="nav-icon"></li>
 	</ul>--><!--/#navicons-->
+
 	<div id="toggles" class="hidden-lg hidden-md">
 		<div id="search-toggle" class="fa fa-search"></div>
 		<div id="nav-toggle" class="fa fa-bars"></div>
