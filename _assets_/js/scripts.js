@@ -233,7 +233,12 @@
 	eventHandler(messageEvent, function (e) {
 		if ( Array.isArray(e.data) ) {
 			if( e.data[0] === "setCalHeight" || e.data[0] === "setNotifyHeight") {
-				resizeIframe(e.data[1], e.source.frameElement);
+				var frames = document.querySelectorAll('iframe');
+				for( var i = 0; i < frames.length; i++ ) {
+					if( frames[i].contentWindow === e.source ){
+						resizeIframe(e.data[1], frames[i]);
+					}
+				}
 			}
 		}
 	});
