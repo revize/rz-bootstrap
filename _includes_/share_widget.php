@@ -15,25 +15,25 @@
 				<div class="modal-body">
 					<div class="copylink">
 						<p>Copy and paste this code into your website.</p>
-						<pre>&lt;a href="<?php echo PAGE_PROTOCOL .'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">Your Link Name&lt;/a&gt;</pre>
+						<pre>&lt;a href="<?php echo htmlspecialchars(PAGE_PROTOCOL .'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">Your Link Name&lt;/a&gt;</pre>
 					</div><!-- /.copylink -->
 					<div class="share-btns">
 						<p>Share this page on your favorite Social network</p>
 						<div class="row">
 							<div class="col-sm-4">
-								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
+								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo htmlspecialchars(PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>" class="btn-facebook" onclick="return !window.open(this.href, 'facebook ', 'width=500,height=500')"
 								target="_blank">
 									<i class="fa fa-facebook"></i> Facebook
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="https://www.twitter.com/home?status=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
+								<a href="https://www.twitter.com/home?status=<?php echo htmlspecialchars(PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
 								target="_blank">
 									<i class="fa fa-twitter"></i> Twitter
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="https://www.reddit.com/submit?url=<?php echo PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
+								<a href="https://www.reddit.com/submit?url=<?php echo htmlspecialchars(PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>" class="btn-reddit" onclick="return !window.open(this.href, 'redit ', 'width=500,height=500')"
 								target="_blank">
 									<i class="fa fa-reddit"></i> Reddit
 								</a>
