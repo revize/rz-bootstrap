@@ -72,7 +72,7 @@
 					<a href="./">category</a>
 					page title
 				</nav><!-- /#breadcrumbs -->
-				<main id="main">
+				<main id="freeform-main">
 					<h1 id="page-title">page title here</h1>
 					<div id="post" class="clearfix">
 						<p>Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</p>
