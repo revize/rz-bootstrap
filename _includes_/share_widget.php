@@ -27,7 +27,7 @@
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="https://www.twitter.com/home?status=<?php echo htmlspecialchars(PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
+								<a href="https://www.twitter.com/intent/tweet?url=<?php echo htmlspecialchars(PAGE_PROTOCOL.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>" class="btn-twitter" onclick="return !window.open(this.href, 'twitter ', 'width=500,height=500')"
 								target="_blank">
 									<i class="fa fa-twitter"></i> Twitter
 								</a>
