@@ -76,6 +76,8 @@
 										e.preventDefault();
 										oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
 										fnDraw( oSettings );
+										$(".stacktable.small-only").remove();
+										$("#example").stacktable();
 									} );
 							}
 			
