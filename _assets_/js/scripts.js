@@ -244,6 +244,21 @@
 	});
 	// End Frame Resizer
 
+	// Alert Close Caching
+	if ($("div.alert").length) {
+		if (window.sessionStorage) {
+			var hide = parseInt(window.sessionStorage.getItem("alertClosed")) > 1;
+			if (hide && $(".user-logged-in").length == 0) {
+				$("div.alert").slideToggle();
+			}
+		}
+		$("div.alert button.close").on('click', function(e) {
+			if (window.sessionStorage) {
+				window.sessionStorage.setItem("alertClosed",parseInt(window.sessionStorage.getItem("alertClosed")||0)+1);
+			}
+		});
+	}
+	
 	// revizeWeather
 	if( typeof $.fn.revizeWeather !== "undefined" ){
 		$.fn.revizeWeather({
