@@ -357,14 +357,15 @@
 	// Tiny Slider
 	if (typeof tns !== "undefined") {
 		$('.tiny-slider').each(function(i, el) {
-			var $el = $(el);
 			tns({
+				autoplay: true,
+				autoplayTimeout: 8000,
 				container: el,
-				mode: "gallery",
-				preventScrollOnTouch: 'force',
 				items: 1,
 				lazyload: true,
-				lazyloadSelector: '.tns-lazy-img' // accompanied with data src or data-style
+				lazyloadSelector: '.tns-lazy-img', // accompanied with data src or data-style
+				mode: "gallery",
+				preventScrollOnTouch: 'force'
 			});
 		});
 
@@ -374,10 +375,10 @@
 			var tinyItemData = $el.data('tinyItems') ? $el.data('tinyItems') : 6;
 			tns({
 				container: el,
-				preventScrollOnTouch: 'force',
 				items: Math.min(tinyItemCount, tinyItemData),
 				lazyload: true,
-				lazyloadSelector: '.tns-lazy-img' // accompanied with data src or data-style
+				lazyloadSelector: '.tns-lazy-img', // accompanied with data src or data-style
+				preventScrollOnTouch: 'force'
 			});
 		});
 	}

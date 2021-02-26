@@ -273,7 +273,8 @@ header{position:relative;z-index:200}
 .tns-outer{position:relative}
 .tns-controls{position:absolute;top:50%;left:0;right:0;z-index:1;transform:translateY(-50%)}
 .tns-controls button:last-of-type {float:right}
-.tns-nav{position:absolute;bottom:0;left:0;right:0;z-index:1;transform:translateY(-50%);text-align:center}
+.tns-nav{position:absolute;bottom:0;left:0;right:0;z-index:1;text-align:center}
+#slider button[data-action]{position:absolute;bottom:0;right:0;z-index:1}
 ul.tiny-slider,
 ul.tiny-carousel{padding:0;margin:0}
 
