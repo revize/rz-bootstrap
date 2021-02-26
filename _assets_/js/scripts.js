@@ -371,7 +371,7 @@
 
 		$('.tiny-carousel').each(function(i, el) {
 			var $el = $(el);
-			var tinyItemCount = $(el).children().length;
+			var tinyItemCount = $el.children().length;
 			var tinyItemData = $el.data('tinyItems') ? $el.data('tinyItems') : 6;
 			tns({
 				container: el,
