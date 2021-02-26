@@ -10,10 +10,10 @@
 	<meta name="description" content="">
 	<meta name="robots" content="index, follow">
 
-	<link rel="stylesheet" href="_assets_/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 	<link rel="stylesheet" href="_assets_/fonts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="_assets_/css/animate.min.css">
-	<link rel="stylesheet" href="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="_assets_/css/layout.css">
 
 	<link rel="shortcut icon" href="_assets_/images/favicon.ico">
@@ -28,10 +28,17 @@
 <!-- REPLACE THIS COMMENT WITH HEADER -->
 
 <section id="slider" role="complementary" aria-label="page banner">
-	<ul class="bxslider">
-		<li style="background:url('_assets_/images/slide-1.jpg') center no-repeat;background-size:cover"></li>
-		<li style="background:url('_assets_/images/slide-1.jpg') center no-repeat;background-size:cover"></li>
-	</ul><!-- /.bxslider -->
+	<ul class="tiny-slider">
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/9562208/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1513994/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+	</ul><!--/.tiny-slider-->
 </section><!-- /#slider -->
 
 <div class="container">
@@ -100,17 +107,18 @@
 
 
 
-<script src="_assets_/js/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>
-<script src="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-<script src="_assets_/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
-<script src="_assets_/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="_assets_/plugins/tiny-slider/tiny-slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="_assets_/plugins/twitter/js/jquery.tweet.min.js"></script>
-<script src="_assets_/plugins/instafeed/instafeed.min.js"></script>
-<script src="_assets_/plugins/sticky/jquery.sticky.js"></script>
+<script src="_assets_/plugins/social-feed/bower_components/codebird-js/codebird.js"></script>
+<script src="_assets_/plugins/social-feed/bower_components/doT/doT.min.js"></script>
+<script src="_assets_/plugins/social-feed/bower_components/moment/min/moment.min.js"></script>
+<script src="_assets_/plugins/social-feed/bower_components/moment/locale/en-au.js"></script>
+<script src="_assets_/plugins/social-feed/js/jquery.socialfeed.js"></script>
 <script src="_assets_/plugins/matchHeight/dist/jquery.matchHeight-min.js"></script>
 <script src="_assets_/plugins/revizeWeather/js/revizeWeather.min.js"></script>
-<script src="_assets_/plugins/waypoints/waypoints.min.js"></script>
 <script src="_assets_/js/scripts.js"></script>
 
 </body>

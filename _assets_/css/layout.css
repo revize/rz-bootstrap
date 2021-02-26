@@ -108,27 +108,27 @@ img[style*="float:left"]{
 -----------------------------------------*/
 .button,
 a.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-.btn{padding:10px 20px;background:#0f99ee;color:#fff!important;border:0;border-radius:0;display:inline-block;font-size:12px;font-weight:700!important;text-decoration:none;cursor:pointer;line-height:normal;vertical-align:top;font-family:sans-serif;text-transform:uppercase;transition:all .3s}
+#post button,
+#post input[type="submit"],
+#post input[type="reset"],
+#post input[type="button"],
+.rz-btn{padding:.375rem .75rem;background:#0f99ee;color:#fff;border:0;border-radius:0;display:inline-block;font-size:1rem;font-weight:400;text-decoration:none;cursor:pointer;line-height:1.5;vertical-align:top;font-family:sans-serif;transition:all .3s}
 .button:hover,
 a.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-.btn:hover{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#0e8cda}
+#post button:hover,
+#post input[type="submit"]:hover,
+#post input[type="reset"]:hover,
+#post input[type="button"]:hover,
+.rz-btn:hover{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#0e8cda;color:#fff}
 .button:active,
 a.button:active,
-button:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active,
-.btn:active{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#0e8cda}
-button::-moz-focus-inner,
-input::-moz-focus-inner{border:0;padding:0}
+#post button:active,
+#post input[type="submit"]:active,
+#post input[type="reset"]:active,
+#post input[type="button"]:active,
+.rz-btn:active{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#0e8cda;color:#fff}
+#post button::-moz-focus-inner,
+#post input::-moz-focus-inner{border:0;padding:0}
 
 /* -----------------------------------------
 
@@ -256,24 +256,26 @@ header{position:relative;z-index:200}
 .btn-lg{font-size:16px;padding:14px 30px;border:0;border-radius:3px}
 .floating-share-btn{position:fixed;z-index:99999;top:40%;right:0;border-radius:0;border:0;background:#F26A39!important;color:#fff!important;padding:8px;box-shadow:0 0 10px rgba(0,0,0,.3);text-align:center}
 .floating-share-btn span{display:block;margin-top:5px;text-transform:uppercase}
+
 /* -----------------------------------------
 
-#bxslider
+#slider
 
 -----------------------------------------*/
 #slider{height:500px;position:relative}
 #slider-caption{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:51}
-.bxslider{padding:0;margin:0}
-.bxslider,
-.bx-viewport,
-.bxslider li,
-.bx-wrapper{height:100%!important}
 
-.bx-wrapper{position:relative;margin:0;padding:0;overflow:hidden}
-.bx-wrapper img{max-width:100%;display:block}
-
-.bxslider{list-style:none}
-.bxslider > li:nth-child(n+1){display:none}
+#slider > .tns-outer,
+#slider > .tns-outer > .tns-inner,
+#slider > .tns-outer > .tns-inner > .tiny-slider,
+#slider > .tns-outer > .tns-inner > .tiny-slider .tns-item,
+.tns-bg-slide {height:100%}
+.tns-outer{position:relative}
+.tns-controls{position:absolute;top:50%;left:0;right:0;z-index:1;transform:translateY(-50%)}
+.tns-controls button:last-of-type {float:right}
+.tns-nav{position:absolute;bottom:0;left:0;right:0;z-index:1;transform:translateY(-50%);text-align:center}
+ul.tiny-slider,
+ul.tiny-carousel{padding:0;margin:0}
 
 /* pager */
 .bx-wrapper .bx-pager{text-align:center}

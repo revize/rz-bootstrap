@@ -9,13 +9,13 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h2 class="modal-title" id="myModalLabel">Share this page</h2>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
 					<div class="copylink">
 						<p>Copy and paste this code into your website.</p>
-						<pre>&lt;a href="<?php echo htmlspecialchars(PAGE_PROTOCOL .'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">Your Link Name&lt;/a&gt;</pre>
+						<pre class="py-3 px-4">&lt;a href="<?php echo htmlspecialchars(PAGE_PROTOCOL .'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?>">Your Link Name&lt;/a&gt;</pre>
 					</div><!-- /.copylink -->
 					<div class="share-btns">
 						<p>Share this page on your favorite Social network</p>

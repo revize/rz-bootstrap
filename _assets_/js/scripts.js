@@ -258,7 +258,7 @@
 			}
 		});
 	}
-	
+
 	// revizeWeather
 	if( typeof $.fn.revizeWeather !== "undefined" ){
 		$.fn.revizeWeather({
@@ -314,8 +314,8 @@
 	$.getScript(translateURL);
 	$('#translation-links a').click(function() {
 		var lang = $(this).data('lang');
-		var $frame = $('.goog-te-menu-frame:first');
-		if (!$frame.size()) {
+		var $frame = $('.goog-te-menu-frame').first();
+		if (!$frame.length) {
 			return false;
 		}
 		$frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
@@ -323,7 +323,7 @@
 	});
 
 	// Twitter Feed
-	if(typeof $.fn.tweet !== "undefined"){
+	if (typeof $.fn.tweet !== "undefined"){
 		$("#twitterfeed").tweet({
 			modpath: '_assets_/plugins/twitter/',
 			username: "RevizeSoftware",
@@ -340,7 +340,7 @@
 	}
 
 	// Facebook and Instagram feeds
-	if ( typeof $.fn.socialfeed !== "undefined"){
+	if (typeof $.fn.socialfeed !== "undefined"){
 		$('#facebook-feed').socialfeed({
 			// Facebook
 			facebook:{
@@ -352,39 +352,34 @@
 			length: 70,
 			show_media: true
 		});
-		$('#instagram-feed').socialfeed({
-			// Instagram
-			instagram:{
-			accounts: ['&251086740'],
-			limit: 2,
-			access_token: '251086740.1677ed0.e1c9d6d2c0e747518b4d5dccec71a1bd'
-			},
-
-			// General settings
-			length:120,
-			show_media:true,
-			media_min_width: 300,
-			template: "_assets_/templates/template.html",
-			callback: function() {
-			}
-		});
 	}
 
-	// bxSlider
-	if(typeof $.fn.bxSlider !== "undefined"){
-		$('.bxslider').each(function(i, el){
-			$(el).bxSlider({
-				mode: 'fade',
-				auto: ($(el).children().length < 2) ? false : true,
-				pager: true,
-				pause: 8000
+	// Tiny Slider
+	if (typeof tns !== "undefined") {
+		$('.tiny-slider').each(function(i, el) {
+			var $el = $(el);
+			tns({
+				container: el,
+				mode: "gallery",
+				preventScrollOnTouch: 'force',
+				items: 1,
+				lazyload: true,
+				lazyloadSelector: '.tns-lazy-img' // accompanied with data src or data-style
 			});
 		});
-	}
 
-	// Owl Slider
-	if(typeof $.fn.owlCarousel !== "undefined"){
-		$("#owl-slider").owlCarousel();
+		$('.tiny-carousel').each(function(i, el) {
+			var $el = $(el);
+			var tinyItemCount = $(el).children().length;
+			var tinyItemData = $el.data('tinyItems') ? $el.data('tinyItems') : 6;
+			tns({
+				container: el,
+				preventScrollOnTouch: 'force',
+				items: Math.min(tinyItemCount, tinyItemData),
+				lazyload: true,
+				lazyloadSelector: '.tns-lazy-img' // accompanied with data src or data-style
+			});
+		});
 	}
 
 	// Responsive Tables
@@ -392,7 +387,7 @@
 	$('.layout-table').attr('role', 'presentation');
 
 	// Preloader
-	$window.load(function() {
+	$window.on('load', function() {
 
 		setTimeout(function(){
 			$body.addClass('loaded');
@@ -511,7 +506,7 @@
 				}
 
 				// Call again to set after window (frames, images, etc) loads.
-				$(window).load(function () {
+				$(window).on('load', function () {
 					resizer();
 				});
 

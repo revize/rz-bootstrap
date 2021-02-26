@@ -10,9 +10,9 @@
 	<meta name="description" content="">
 	<meta name="robots" content="index, follow">
 
-	<link rel="stylesheet" href="_assets_/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 	<link rel="stylesheet" href="_assets_/fonts/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="_assets_/css/layout.css">
 
 	<link rel="shortcut icon" href="_assets_/images/favicon.ico">
@@ -189,12 +189,30 @@
 	</div><!--/.container-->
 </header>
 <section id="slider">
-	<ul class="bxslider">
-		<li style="background:url('_assets_/images/slide-1.jpg') center no-repeat;background-size:cover"></li>
-	</ul><!--/.bxslider-->
+	<ul class="tiny-slider">
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/9562208/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+		<li class='tiny-item'>
+			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1513994/1920x1080') center no-repeat;background-size:cover"></div>
+		</li>
+	</ul><!--/.tiny-slider-->
 	<h1 class="container text-center" id="slider-caption">Site caption</h1>
 </section><!--/#slider-->
+
 <main id="main">
+	<div id="tiny-carousel">
+		<ul class="tiny-carousel" data-tiny-items="4">
+			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/9562208/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 1</a></li>
+			<li class="tiny-item"><a href="#"><div class="tns-lazy-img" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover" style="padding-bottom:52.4%;">Item 2</a></li>
+			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1513994/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 3</a></li>
+			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1891993/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 4</a></li>
+			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/548245/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 5</a></li>
+		</ul><!--/.tiny-carousel-->
+	</div><!--/#tiny-carousel-->
 
 	<div class="alert alert-dismissible floating-alert fade in os-animation" data-os-animation="fadeInUpBig" data-os-animation-delay="2s" role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -220,14 +238,14 @@
 				<h2 id="newsletter-title">City Newsletter</h2>
 				<form class="signup submission" id="newsletter-signup"  action="optin.php" enctype="application/x-www-form-urlencoded" method="post">
 					<input type="email" name="femail" placeholder="Enter your email address" aria-label="email address" required>
-					<button>Sign Up</button>
+					<button class="btn rz-btn">Sign Up</button>
 				</form><!--/.signup.submission#newsletter-signup-->
 			</section><!--/.col-md-6-->
 			<section class="col-md-6" aria-labelledby="notify-title">
 				<h2 id="notify-title">Stay Updated</h2>
 				<form action="enotify/index.php" id="enotify-signup" class="signup clearfix">
 					<input type="email" name="email" placeholder="Enter your email address" aria-label="email address" required>
-					<button>Sign Up</button>
+					<button class="btn btn-primary">Sign Up</button>
 				</form><!--/.signup.clearfix#enotify-signup-->
 			</section><!--/.col-md-6-->
 		</div><!--/.row-->
@@ -249,21 +267,18 @@
 </footer>
 
 
-<script src="_assets_/js/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>
-<script src="_assets_/plugins/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-<script src="_assets_/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
-<script src="_assets_/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="_assets_/plugins/tiny-slider/tiny-slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="_assets_/plugins/twitter/js/jquery.tweet.min.js"></script>
 <script src="_assets_/plugins/social-feed/bower_components/codebird-js/codebird.js"></script>
 <script src="_assets_/plugins/social-feed/bower_components/doT/doT.min.js"></script>
 <script src="_assets_/plugins/social-feed/bower_components/moment/min/moment.min.js"></script>
 <script src="_assets_/plugins/social-feed/bower_components/moment/locale/en-au.js"></script>
 <script src="_assets_/plugins/social-feed/js/jquery.socialfeed.js"></script>
-<script src="_assets_/plugins/sticky/jquery.sticky.js"></script>
 <script src="_assets_/plugins/matchHeight/dist/jquery.matchHeight-min.js"></script>
 <script src="_assets_/plugins/revizeWeather/js/revizeWeather.min.js"></script>
-<script src="_assets_/plugins/waypoints/waypoints.min.js"></script>
 <script src="_assets_/js/scripts.js"></script>
 
 </body>
