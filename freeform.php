@@ -72,7 +72,7 @@
 				</ul><!-- /#flyout -->
 			</nav>
 		</aside>
-		<div class="col-md-9">
+		<div class="col">
 			<div id="entry">
 				<nav id="breadcrumbs" aria-label="breadcrumb">
 					<a href="./">home</a>
