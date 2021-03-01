@@ -1,0 +1,16 @@
+.sass-cache
+*.DS_Store
+*.codekit
+*.sublime-project
+*.sublime-workspace
+*.scssc
+*.swp
+*.log
+/*.html
+*.sketch
+
+/.codekit-cache/
+/bower_components/
+/node_modules/
+/test/reports/
+/tests_output/
