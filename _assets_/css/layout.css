@@ -279,23 +279,6 @@ header{position:relative;z-index:200}
 ul.tiny-slider,
 ul.tiny-carousel{padding:0;margin:0}
 
-/* pager */
-.bx-wrapper .bx-pager{text-align:center}
-.bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item{display:inline-block}
-.bx-wrapper .bx-pager.bx-default-pager a{background:#666;text-indent:-9999px;display:block;width:10px;height:10px;margin:0 5px;outline:0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
-.bx-wrapper .bx-pager.bx-default-pager a:hover,
-.bx-wrapper .bx-pager.bx-default-pager a.active{background:#000}
-
-/* direction controls */
-.bx-wrapper .bx-controls-direction a{width:32px;height:32px;margin:-20px 0 0;display:block;background:url(../images/slider-nav.png) no-repeat 0 0;position:absolute;z-index:51;top:50%;cursor:pointer;text-indent:-9999px;opacity:0;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease}
-.bx-wrapper .bx-controls-direction a.disabled{display:none}
-.bx-wrapper .bx-prev{left:-40px}
-.bx-wrapper .bx-next{right:-40px;background-position:100% 0!important}
-.bx-wrapper:hover .bx-next{opacity:0.6;right:20px}
-.bx-wrapper:hover .bx-prev{opacity:0.6;left:20px}
-.bx-wrapper .bx-prev:hover,.bx-wrapper .bx-next:hover{opacity:1}
-
 /* -----------------------------------------
 
 #media queries
