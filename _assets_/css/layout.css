@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------------
 
 	Theme Name: Site Name
-	Front-end developer: Richard Opiniano | Kevin Nowalski | Chris Yang | Omar Baig | Justin Kunnummyalil | Hayk Galoyan
+	Front-end developer: Richard Opiniano | Kevin Nowalski | Omar Baig | Justin Kunnummyalil | Hayk Galoyan
 	Author Design: Samir Alley @samiralley | Alex Parent | Ying Liu | Kat Wiard | Nasryn Abou-Arabi
 	Author URI: http://www.revize.com/
 	Date: mm/dd/yyyy
@@ -225,9 +225,10 @@ header{position:relative;z-index:200}
 #flyout ul{padding:0;margin:0;display:none}
 #flyout ul a,
 #flyout ul span{font-size:16px;padding:10px 15px}
-.breadcrumbs{font-size:13px;text-transform:capitalize}
-.breadcrumbs a{text-decoration:none}
-
+#breadcrumbs{font-size:13px;text-transform:capitalize}
+#breadcrumbs a{text-decoration:none}
+#breadcrumbs ul{list-style:none;margin:0;padding:0}
+#breadcrumbs li{display:inline-block;margin:0;padding:0}
 /* -----------------------------------------
 
 #share widget
