@@ -75,9 +75,11 @@
 		<div class="col">
 			<div id="entry">
 				<nav id="breadcrumbs" aria-label="breadcrumb">
-					<a href="./">home</a>
-					<a href="./">category</a>
-					page title
+					<ul>
+						<li><a href="./">home</a></li>
+						<li><a href="./">category</a></li>
+						<li>page title</li>
+					</ul>
 				</nav><!-- /#breadcrumbs -->
 				<main id="freeform-main">
 					<h1 id="page-title">page title here</h1>
