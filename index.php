@@ -260,7 +260,7 @@
 				&copy; Sitename
 			</div><!--/.col-md-6-->
 			<div class="col-md-6" id="revize">
-				Powered by <a href="https://www.revize.com" id="revize-link">revize.</a>, The Government Website Experts | <a href="./" id="revize-login">Login</a>
+				Powered by <a href="https://www.revize.com" id="revize-link">revize.</a> Government Website Experts | <a href="./" id="revize-login">Login</a>
 			</div><!--/.col-md-6#revize-->
 		</div><!--/.row-->
 	</div><!--/.container-->
