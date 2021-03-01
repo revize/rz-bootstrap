@@ -95,7 +95,6 @@
 								'google-translate');
 						}
 					</script>
-					<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 				</div><!--/#google-translate.control.hidden-sm.hidden-xs-->
 				<ul id="translation-links">
 					<li><button type="button" id="translate-button" aria-label="translate website" aria-haspopup="true" aria-expanded="false">Translate <i class="fa fa-angle-down"></i></button>
