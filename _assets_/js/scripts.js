@@ -246,11 +246,9 @@
 
 	// Alert Close Caching
 	if ($("div.alert").length) {
-		if (window.sessionStorage) {
-			var hide = parseInt(window.sessionStorage.getItem("alertClosed")) > 1;
-			if (hide && $(".user-logged-in").length == 0) {
-				$("div.alert").slideToggle();
-			}
+		var hide = window.sessionStorage && parseInt(window.sessionStorage.getItem("alertClosed")) > 1;
+		if (!hide || $(".user-logged-in").length != 0) {
+			$("div.alert").addClass('show');
 		}
 		$("div.alert button.close").on('click', function(e) {
 			if (window.sessionStorage) {
