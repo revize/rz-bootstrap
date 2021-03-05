@@ -187,7 +187,7 @@
 		</div><!--/.row-->
 	</div><!--/.container-->
 </header>
-<section id="slider">
+<section id="slider" class="tiny-slider-wrap">
 	<ul class="tiny-slider">
 		<li class='tiny-item'>
 			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/9562208/1920x1080') center no-repeat;background-size:cover"></div>

@@ -266,16 +266,16 @@ header{position:relative;z-index:200}
 #slider{height:500px;position:relative}
 #slider-caption{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:51}
 
-#slider > .tns-outer,
-#slider > .tns-outer > .tns-inner,
-#slider > .tns-outer > .tns-inner > .tiny-slider,
-#slider > .tns-outer > .tns-inner > .tiny-slider .tns-item,
+.tiny-slider-wrap > .tns-outer,
+.tiny-slider-wrap > .tns-outer > .tns-inner,
+.tiny-slider-wrap > .tns-outer > .tns-inner > .tiny-slider,
+.tiny-slider-wrap > .tns-outer > .tns-inner > .tiny-slider .tns-item,
 .tns-bg-slide {height:100%}
 .tns-outer{position:relative}
 .tns-controls{position:absolute;top:50%;left:0;right:0;z-index:1;transform:translateY(-50%)}
 .tns-controls button:last-of-type {float:right}
 .tns-nav{position:absolute;bottom:0;left:0;right:0;z-index:1;text-align:center}
-#slider button[data-action]{position:absolute;bottom:0;right:0;z-index:1}
+.tiny-slider-wrap button[data-action]{position:absolute;bottom:0;right:0;z-index:1}
 ul.tiny-slider,
 ul.tiny-carousel{padding:0;margin:0}
 
