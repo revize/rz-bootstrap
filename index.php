@@ -28,17 +28,17 @@
 
 	<a href="#main" id="skip" tabindex="0" class="btn">Skip to main content</a>
 
-	<!--<ul id="navicons" class="hidden">
+	<!--<ul id="navicons" class="d-none">
 		<li><img src="_assets_/images/navicon-1.png" alt="1" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-2.png" alt="2" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-3.png" alt="3" class="nav-icon"></li>
 		<li><img src="_assets_/images/navicon-4.png" alt="4" class="nav-icon"></li>
 	</ul>--><!--/#navicons-->
 
-	<div id="toggles" class="hidden-lg hidden-md">
+	<div id="toggles" class="d-lg-none">
 		<div id="search-toggle" class="fa fa-search"></div>
 		<div id="nav-toggle" class="fa fa-bars"></div>
-	</div><!--/#toggles.hidden-lg.hidden-md-->
+	</div><!--/#toggles-->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
@@ -87,7 +87,7 @@
 					<button type="button" id="decrease-font" class="fa fa-minus"><span class="sr-only">Decrease font size</span></button>
 					<button type="button" id="increase-font"  class="fa fa-plus"><span class="sr-only">Increase font size</span></button>
 				</div><!--/#font-resizer-->
-				<div id="google-translate" class="hidden">
+				<div id="google-translate" class="d-none">
 					<script>
 						function googleTranslateElementInit() {
 							new google.translate.TranslateElement({pagelanguage: 'en',
@@ -95,7 +95,7 @@
 								'google-translate');
 						}
 					</script>
-				</div><!--/#google-translate.control.hidden-sm.hidden-xs-->
+				</div><!--/#google-translate-->
 				<ul id="translation-links">
 					<li><button type="button" id="translate-button" aria-label="translate website" aria-haspopup="true" aria-expanded="false">Translate <i class="fa fa-angle-down"></i></button>
 						<ul class="clearfix" aria-labelledby="translate-button">
