@@ -437,6 +437,11 @@
 		}
 		onScrollInit($('.os-animation'));
 
+		//#Fix Bootstrap Strict Collapse 
+		$("a[data-toggle='collapse']").each(function() {
+		    this.href = this.href.substring(this.href.indexOf("#collapse"));
+		});
+		
 		//#Smooth Scrolling
 		$('a[href*="#"]').not('[href="#"]').not('[href*="#collapse"]').click(function(event) {
 			if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
