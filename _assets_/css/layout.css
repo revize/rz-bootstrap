@@ -229,6 +229,7 @@ header{position:relative;z-index:200}
 #breadcrumbs a{text-decoration:none}
 #breadcrumbs ul{list-style:none;margin:0;padding:0}
 #breadcrumbs li{display:inline-block;margin:0;padding:0}
+.col-xs-12{width:100%}
 /* -----------------------------------------
 
 #share widget
