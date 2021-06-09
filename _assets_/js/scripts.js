@@ -306,17 +306,47 @@
 		$translateButton.attr('aria-expanded', false);
 	});
 
-	var translateURL = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+	function removeCookieString(value, domain) {
+		domain = domain ? 'domain='+domain+'; ' : '';
+		return value+'; expires=Thu, 01 Jan 1970 00:00:01 GMT; '+domain+'path=/';
+	}
+
+	function unsetGoogtransCookie() {
+		for (var domains = window.location.hostname.split('.'); domains.length >= 2; domains.shift()) {
+			var cookieString = removeCookieString('googtrans=unset', domains.join('.'));
+			document.cookie=cookieString;
+			if	(domains.length === 2) {
+				cookieString = removeCookieString('googtrans=unset', '.'+domains.join('.'));
+				document.cookie=cookieString;
+			}
+		}
+		document.cookie=removeCookieString('googtrans=unset');
+	}
+
+	if (document.cookie.split(';').some(function(item) { return item.trim().startsWith('googtrans=/auto/en'); })) {
+		unsetGoogtransCookie();
+	}
 
 	 // Translate Script
+	var translateURL = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 	$.getScript(translateURL);
 	$('#translation-links a').click(function() {
 		var lang = $(this).data('lang');
 		var $frame = $('.goog-te-menu-frame').first();
+
+		if (lang === 'English') {
+			$('.goog-te-banner-frame').contents().find('.goog-close-link').get(0).click();
+			return;
+		}
+
 		if (!$frame.length) {
 			return false;
 		}
-		$frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
+		var $el =$frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0);
+		if (!$el) {
+			$frame.contents().find('.goog-te-menu2-item-selected span.text:contains(' + lang + ')').get(0)
+		}
+		$el.click();
 		return false;
 	});
 
@@ -435,11 +465,11 @@
 		}
 		onScrollInit($('.os-animation'));
 
-		//#Fix Bootstrap Strict Collapse 
+		//#Fix Bootstrap Strict Collapse
 		$("a[data-toggle='collapse']").each(function() {
 		    this.href = this.href.substring(this.href.indexOf("#collapse"));
 		});
-		
+
 		//#Smooth Scrolling
 		$('a[href*="#"]').not('[href="#"]').not('[href*="#collapse"]').click(function(event) {
 			if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
