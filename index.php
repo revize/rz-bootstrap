@@ -204,8 +204,12 @@
 
 <main id="main">
 	<div id="tiny-carousel">
+		<!-- You should style carousels so that they load without stacking and disrupting the page as much as possible -->
 		<ul class="tiny-carousel" data-tiny-items="4">
+			<!-- Choose either all images or backgrounds: -->
+			<!-- Example Using Images -->
 			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/9562208/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 1</a></li>
+			<!-- Example Using background styles -->
 			<li class="tiny-item"><a href="#"><div class="tns-lazy-img" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover" style="padding-bottom:52.4%;">Item 2</a></li>
 			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1513994/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 3</a></li>
 			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1891993/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 4</a></li>
