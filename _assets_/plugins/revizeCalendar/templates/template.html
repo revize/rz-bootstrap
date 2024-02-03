@@ -1,0 +1,13 @@
+<div class="mini-calendar" data-calendar=""></div>
+<div class="mini-events-list" data-list-length="4" data-calendar="" style="display:none">
+	{{?it.length}}
+	{{~it :event:index}}
+		<div class="col-md-6 cal-event">
+			<div class="cal-content" data-index="{{=event.i}}" data-click-event>
+				<div><time>{{=event.start.month.short}}<span>{{=event.start.day.num}}</span></time></div>
+				<span>{{=event.title}}</span>
+			</div><!--/.cal-content-->
+		</div>
+	{{~}}
+	{{?}}
+</div>
