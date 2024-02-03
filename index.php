@@ -21,6 +21,8 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="_assets_/images/touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="_assets_/images/touch-icon-iphone4.png">
 	<link rel="apple-touch-icon" sizes="144x144" href="_assets_/images/touch-icon-ipad2.png">
+	
+	<?php include "_includes_/calendar_css.php"; ?>
 
 </head>
 <body id="homepage">
@@ -190,15 +192,8 @@
 </header>
 <section id="slider" class="tiny-slider-wrap">
 	<ul class="tiny-slider">
-		<li class='tiny-item'>
-			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/9562208/1920x1080') center no-repeat;background-size:cover"></div>
-		</li>
-		<li class='tiny-item'>
-			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover"></div>
-		</li>
-		<li class='tiny-item'>
-			<div class="tns-lazy-img tns-bg-slide" data-style="background:url('https://source.unsplash.com/collection/1513994/1920x1080') center no-repeat;background-size:cover"></div>
-		</li>
+
+
 	</ul><!--/.tiny-slider-->
 	<h1 class="container text-center" id="slider-caption">Site caption</h1>
 </section><!--/#slider-->
@@ -208,13 +203,7 @@
 		<!-- You should style carousels so that they load without stacking and disrupting the page as much as possible -->
 		<ul class="tiny-carousel" data-tiny-items="4">
 			<!-- Choose either all images or backgrounds: -->
-			<!-- Example Using Images -->
-			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/9562208/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 1</a></li>
-			<!-- Example Using background styles -->
-			<li class="tiny-item"><a href="#"><div class="tns-lazy-img" data-style="background:url('https://source.unsplash.com/collection/1673600/1920x1080') center no-repeat;background-size:cover" style="padding-bottom:52.4%;">Item 2</a></li>
-			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1513994/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 3</a></li>
-			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/1891993/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 4</a></li>
-			<li class="tiny-item"><a href="#"><img class="tns-lazy-img" data-src="https://source.unsplash.com/collection/548245/1920x1080" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" role="presentation">Item 5</a></li>
+
 		</ul><!--/.tiny-carousel-->
 	</div><!--/#tiny-carousel-->
 
@@ -224,6 +213,10 @@
 		<p>Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120 characters Max 120</p>
 		<p><a href="#" class="rz-btn">Read More</a></p>
 	</div><!-- /.alert -->
+	
+	<div class="container">
+		<div id="mini-events" data-template-file="template.html"></div>
+	</div>
 
 	<div class="container">
 		<section class="row" aria-label="social media feeds">
@@ -270,15 +263,10 @@
 	</div><!--/.container-->
 </footer>
 
+<script src="//development.revize.com/revize/plugins/revize_calendar/index.v2.js"></script>
 <script src="_assets_/plugins/modernizr/modernizr.custom.js"></script>
 <script src="_assets_/plugins/tiny-slider/dist/min/tiny-slider.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="_assets_/plugins/twitter/js/jquery.tweet.min.js"></script>
-<script src="_assets_/plugins/social-feed/bower_components/codebird-js/codebird.js"></script>
-<script src="_assets_/plugins/social-feed/bower_components/doT/doT.min.js"></script>
-<script src="_assets_/plugins/social-feed/bower_components/moment/min/moment.min.js"></script>
-<script src="_assets_/plugins/social-feed/bower_components/moment/locale/en-au.js"></script>
-<script src="_assets_/plugins/social-feed/js/jquery.socialfeed.js"></script>
 <script src="_assets_/plugins/matchHeight/dist/jquery.matchHeight-min.js"></script>
 <script src="_assets_/plugins/revizeWeather/js/revizeWeather.min.js"></script>
 <script src="_assets_/js/scripts.js"></script>
