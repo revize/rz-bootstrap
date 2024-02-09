@@ -7,6 +7,69 @@
 
 -----------------------------------------------------------------------------------*/
 
+/* Calendar V2 Placeholder Data --- Delete this chunk after enabling */
+window.scriptToPromise = new Proxy(window.scriptToPromise, {
+	apply: async function(func, ref, args) {
+		args.push("//development.revize.com");
+		return await func.apply(ref, args);
+	}
+});
+if (typeof RZ === 'undefined') {
+	RZ = { webspace: "localdev" };
+} else {
+	if (window.location.host.indexOf("development") < 0) {
+		var warn = document.createElement("div");
+		warn.style = "position:fixed;top:0;left:0;right:0;text-align:center;padding:15px;background:red;color:white;z-index:100000";
+		warn.innerText = "Calendar V2 Placeholder data is in effect. Please delete the section and clear your cache!";
+		document.body.appendChild(warn);
+	}
+}
+window.revizeCalendar.importData = [{
+	parser: function() {
+		var randEvs = [];
+		var rules = { events: 10, allDay: 2, days: [-2, -1, 0, 1, 2, 3], maxFuture: 12, multipleDays: 2 };
+		for (var i = 0; i < rules.events; i++) {
+			var start = new Date();
+			start.setMinutes( start.getMinutes() + (Math.random() * 60 * 8) );
+			if (rules.hasOwnProperty("days") && i < rules.days.length) {
+				start.setMinutes( start.getMinutes() + (rules.days[i] * 60 * 24) );
+			} else if (rules.hasOwnProperty("maxFuture")) {
+				start.setMinutes( start.getMinutes() + (Math.random() * rules.maxFuture * 60 * 24) );
+			}
+			
+			var end = new Date(start);
+			if (rules.hasOwnProperty("days") && i < rules.multipleDays) {
+				end.setMinutes( end.getMinutes() + (Math.random() * 60 * 24 * 3) );
+			} else {
+				end.setMinutes( end.getMinutes() + (Math.random() * 60 * 4) );
+			}
+			
+			var title = "";
+			for (var p = 0; p < 5 + (Math.floor(Math.random() * 8)); p++) {
+				var piece = Math.random().toString(36).slice(2);
+				piece = piece.slice(Math.floor(Math.random() * (piece.length - 4)));
+				title += piece;
+				if (Math.random() * 2 > 1) {
+					title += " ";
+				}
+			}
+			
+			var ev = {
+				title: title,
+				start: start.toISOString(),
+				end: end.toISOString(),
+				calendar_displays: [1],
+				image: "",
+			}
+			ev.color = window.revizeCalendar.fns.getEventColor(ev);
+			
+			randEvs.push(ev);
+		}
+		return randEvs;
+	}
+}];
+/* End Calendar V2 Placeholder Data --- Delete this chunk after enabling */
+
 (function($) {
 
 	'use strict';
