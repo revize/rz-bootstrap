@@ -12,34 +12,28 @@
 	'use strict';
 
 	var $window = $(window),
-		$body = $('body');
+		$body = $('body'),
+		$html = $('html');
 
-	/*!
-	 * IE10 viewport hack for Surface/desktop Windows 8 bug
-	 * Copyright 2014-2015 Twitter, Inc.
-	 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-	 */
-
-	// See the Getting Started docs for more information:
-	// http://getbootstrap.com/getting-started/#support-ie10-width
-	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-		var msViewportStyle = document.createElement('style');
-		msViewportStyle.appendChild(
-			document.createTextNode(
-			  '@-ms-viewport{width:auto!important}'
-			)
-		); document.querySelector('head').appendChild(msViewportStyle);
-	}
 
 	// RZ Class
 	if(typeof RZ !== "undefined"){
 		if(RZ.login){
-			$body.addClass("user-logged-in");
+			$html.addClass("user-logged-in");
 		} else{
-			$body.addClass("user-not-logged-in");
+			$html.addClass("user-not-logged-in");
 		}
 	}
 
+	$(window).on("scroll", function() {
+		if($(window).scrollTop() > 0) {
+			$(".sticky-header").addClass("sticky-top");
+		} else {
+			//remove the background property so it comes transparent again (defined in your css)
+		   $(".sticky-header").removeClass("sticky-top");
+		}
+	});
+	
 	// Font resizer
 	function textResizer() {
         var  $dec, $inc;
@@ -80,6 +74,24 @@
 		}
 	});
 
+	// for revize buttons container
+	$(".rz-btns-container .rzBtn").each(function(){ 
+		var $rzBtnsContainer = $(this);
+		if($rzBtnsContainer.html().trim()==""){
+			$rzBtnsContainer.closest(".has-edit-buttons").removeClass("has-edit-buttons");
+		} else {
+			$rzBtnsContainer.closest(".has-edit-buttons").addClass('yes-has-edit-buttons');
+		} 
+	});
+
+	// responsive views from revize bar 
+	var urlParams = new URLSearchParams(window.location.search); //get all parameters
+	var hidebar = urlParams.get('hidebar'); //extract the hidebar parameter - this will return NULL if hidebar isn't a parameter
+	
+	if(hidebar) { //check if hidebar parameter is set to anything
+		$body.removeClass("user-logged-in").addClass("hide-edit-btns");
+	}
+		
 	// prevent focused class changes on click - This way arrows wont pop when clicking nav links
 	$("#nav a,#flyout a").on('mousedown',function(){
 		isClick = true;
@@ -250,7 +262,7 @@
 		if (!hide || $(".user-logged-in").length != 0) {
 			$("div.alert").addClass('show');
 		}
-		$("div.alert button.close").on('click', function(e) {
+		$("div.alert .close-alert").on('click', function(e) {
 			if (window.sessionStorage) {
 				window.sessionStorage.setItem("alertClosed",parseInt(window.sessionStorage.getItem("alertClosed")||0)+1);
 			}
@@ -300,87 +312,58 @@
 			$translateButton.attr('aria-expanded', !('true' === $translateButton.attr('aria-expanded')));
 		}
 	});
-
+	
 	$('#translation-links ul').on('mouseleave',function(){
 		$(this).fadeOut();
 		$translateButton.attr('aria-expanded', false);
 	});
-
+	
 	function removeCookieString(value, domain) {
 		domain = domain ? 'domain='+domain+'; ' : '';
 		return value+'; expires=Thu, 01 Jan 1970 00:00:01 GMT; '+domain+'path=/';
 	}
-
+	
 	function unsetGoogtransCookie() {
 		for (var domains = window.location.hostname.split('.'); domains.length >= 2; domains.shift()) {
 			var cookieString = removeCookieString('googtrans=unset', domains.join('.'));
 			document.cookie=cookieString;
-			if	(domains.length === 2) {
+			if  (domains.length === 2) {
 				cookieString = removeCookieString('googtrans=unset', '.'+domains.join('.'));
 				document.cookie=cookieString;
 			}
 		}
 		document.cookie=removeCookieString('googtrans=unset');
 	}
-
+	
 	if (document.cookie.split(';').some(function(item) { return item.trim().startsWith('googtrans=/auto/en'); })) {
 		unsetGoogtransCookie();
 	}
-
+	
 	 // Translate Script
 	var translateURL = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 	$.getScript(translateURL);
 	$('#translation-links a').click(function() {
 		var lang = $(this).data('lang');
-		var $frame = $('.goog-te-menu-frame').first();
-
-		if (lang === 'English') {
-			$('.goog-te-banner-frame').contents().find('.goog-close-link').get(0).click();
-			return;
-		}
-
+		var $frame = $('iframe.skiptranslate');
 		if (!$frame.length) {
 			return false;
 		}
-		var $el =$frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0);
+		var $el = $frame.contents().find('span.text:contains(' + lang + ')').parent().parent().get(0);
+	
 		if (!$el) {
-			$frame.contents().find('.goog-te-menu2-item-selected span.text:contains(' + lang + ')').get(0)
+			$frame.contents().find('span.text:contains("English")').parent().parent().get(0);
 		}
 		$el.click();
 		return false;
 	});
-
-	// Twitter Feed
-	if (typeof $.fn.tweet !== "undefined"){
-		$("#twitterfeed").tweet({
-			modpath: '_assets_/plugins/twitter/',
-			username: "RevizeSoftware",
-			join_text: "auto",
-			avatar_size: 0,
-			count: 1,
-			auto_join_text_default: "",
-			auto_join_text_ed: "",
-			auto_join_text_ing: "",
-			auto_join_text_reply: "",
-			auto_join_text_url: "",
-			loading_text: "Loading Tweet..."
-		});
-	}
-
-	// Facebook and Instagram feeds
-	if (typeof $.fn.socialfeed !== "undefined"){
-		$('#facebook-feed').socialfeed({
-			// Facebook
-			facebook:{
-				accounts: ['@GadsdenCountyBOCC'],
-				limit: 5,
-				access_token: 'EAAFsTjd21XMBAE9NQVHsxSxe1SpyV3KTQ2dX38YB3F5ZCHXp3ZBWamxKbdLA5W0Q41TmqKGBZApgeyRSEQnnIldb1mpjdjlT1tV2ujleHSBqKyCtp8FmvuBQCVG0jBkoluV8IMWoC5MQVZCZCVYfRojLVnBeNX96udhZCswPyXtQZDZD'
-			},
-			template: "_assets_/templates/template.html",
-			length: 70,
-			show_media: true
-		});
-	}
+	
+	var $translateReset = $('#translate-reset');
+	$translateReset.on('keydown click', function(e){
+		
+		if (e.keyCode === 13 || e.type === 'click') {
+			$('iframe.skiptranslate').contents().find('span.text:contains("English")').parent().parent().get(0).click();
+		}
+	});
 
 	// Tiny Slider
 	if (typeof tns !== "undefined") {
@@ -393,10 +376,12 @@
 				lazyload: true,
 				lazyloadSelector: '.tns-lazy-img', // accompanied with data src or data-style
 				mode: "gallery",
-				preventScrollOnTouch: 'force'
+				preventScrollOnTouch: 'force',
+				autoplayButtonOutput: false,
+				controlsText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']
 			});
 		});
-
+	
 		$('.tiny-carousel').each(function(i, el) {
 			var $el = $(el);
 			var tinyItemCount = $el.children().length;
@@ -406,7 +391,8 @@
 				items: Math.min(tinyItemCount, tinyItemData),
 				lazyload: true,
 				lazyloadSelector: '.tns-lazy-img', // accompanied with data src or data-style
-				preventScrollOnTouch: 'force'
+				preventScrollOnTouch: 'force',
+				controlsText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
 			});
 		});
 	}
@@ -426,44 +412,6 @@
 	});
 
 	$window.ready(function(){
-
-		// matchHeight
-		if(typeof $.fn.matchHeight !== "undefined"){
-			$('.equal').matchHeight({
-				//defaults
-				byRow: true,
-				property: 'height', // height or min-height
-				target: null,
-				remove: false
-			});
-		}
-
-		// Animations http://www.oxygenna.com/tutorials/scroll-animations-using-waypoints-js-animate-css
-		function onScrollInit( items, trigger ) {
-			items.each( function() {
-				var osElement = $(this),
-					osAnimationClass = osElement.data('os-animation'),
-					osAnimationDelay = osElement.data('os-animation-delay');
-
-				osElement.css({
-					'-moz-animation-delay':     osAnimationDelay,
-					'animation-delay':          osAnimationDelay,
-					'-webkit-animation-delay':  osAnimationDelay
-				});
-
-				var osTrigger = ( trigger ) ? trigger : osElement;
-
-				if(typeof $.fn.waypoint !== "undefined"){
-					osTrigger.waypoint(function() {
-						osElement.addClass('animated').addClass(osAnimationClass);
-					},{
-						triggerOnce: true,
-						offset: '100%'
-					});
-				}
-			});
-		}
-		onScrollInit($('.os-animation'));
 
 		//#Smooth Scrolling
 		$('a[href*="#"]').not('[href="#"]').not('[href*="#collapse"]').click(function(event) {
@@ -488,61 +436,6 @@
 				}
 			}
 		});
-
-		/*global jQuery */
-		/*!
-		* FlexVerticalCenter.js 1.0
-		*
-		* Copyright 2011, Paul Sprangers http://paulsprangers.com
-		* Released under the WTFPL license
-		* http://sam.zoy.org/wtfpl/
-		*
-		* Date: Fri Oct 28 19:12:00 2011 +0100
-		*/
-		$.fn.flexVerticalCenter = function( options ) {
-			var settings = $.extend({
-				cssAttribute:   'margin-top', // the attribute to apply the calculated value to
-				verticalOffset: 0,            // the number of pixels to offset the vertical alignment by
-				parentSelector: null,         // a selector representing the parent to vertically center this element within
-				debounceTimeout: 25,          // a default debounce timeout in milliseconds
-				deferTilWindowLoad: false     // if true, nothing will take effect until the $(window).load event
-			}, options || {});
-
-			return this.each(function(){
-				var $this   = $(this); // store the object
-				var debounce;
-
-				// recalculate the distance to the top of the element to keep it centered
-				var resizer = function () {
-
-					var parentHeight = (settings.parentSelector && $this.parents(settings.parentSelector).length) ?
-						$this.parents(settings.parentSelector).first().height() : $this.parent().height();
-
-					$this.css(
-						settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
-					);
-				};
-
-				// Call on resize. Opera debounces their resize by default.
-				$(window).resize(function () {
-					clearTimeout(debounce);
-					debounce = setTimeout(resizer, settings.debounceTimeout);
-				});
-
-				if (!settings.deferTilWindowLoad) {
-					// call it once, immediately.
-					resizer();
-				}
-
-				// Call again to set after window (frames, images, etc) loads.
-				$(window).on('load', function () {
-					resizer();
-				});
-
-			});
-
-		};
-		$('.v-align').flexVerticalCenter();
 
 	}); // Ready
 
