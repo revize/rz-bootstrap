@@ -1,2 +1,2 @@
 # rz-bootstrap
-Revize Bootstrap Framework
+revize Framework
