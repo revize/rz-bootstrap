@@ -471,6 +471,7 @@ a.button:active,
 .relative{position:relative!important}
 .absolute{position:absolute!important}
 .user-logged-in{box-shadow: 0 0 10px rgba(21,0,56,0);padding:14px}
+.rz-bar-center-col{display:none!important}
 
 /* default position for revize buttons is top right DO NOT WRAP - Check Below for other positioning */
 .rz-btns-container{line-height:1.5!important;font-size:16px;opacity:0;background:#fff;padding:4px;box-shadow:0px 2px 10px rgba(21, 0, 56, 0.08);border:1px solid rgba(21, 0, 56,.1);transform:translateY(10px);transition:all .2s;z-index:999;position:absolute;top:0;right:0}
