@@ -474,7 +474,7 @@ a.button:active,
 
 /* default position for revize buttons is top right DO NOT WRAP - Check Below for other positioning */
 .rz-btns-container{line-height:1.5!important;font-size:16px;opacity:0;background:#fff;padding:4px;box-shadow:0px 2px 10px rgba(21, 0, 56, 0.08);border:1px solid rgba(21, 0, 56,.1);transform:translateY(10px);transition:all .2s;z-index:999;position:absolute;top:0;right:0}
-.rz-btns-stacked{padding:6px 6px 0px!important}
+.rz-btns-stacked{padding:6px 6px 0!important}
 
 /* 
 to reposition '.rz-btns-container' WRAP IT IN A DIV WITH ONE OF THE CLASSES BELOW
@@ -499,8 +499,8 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 
 /* ----------------------------------------- rzBtn's -----------------------------------------*/
 .rz-btns-container a{display:inline-block!important}
-.rzBtn{text-transform:capitalize;cursor:pointer;text-decoration:none;position:relative;z-index:99;line-height:1.5!important;display:inline-block!important;letter-spacing:0!important;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold;text-transform:none;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
-.rz-btns-stacked a,.rz-btns-stacked .rzBtn{display:block;margin-bottom:6px;}
+.rzBtn{text-transform:capitalize;cursor:pointer;text-decoration:none;position:relative;z-index:99;line-height:1.5!important;display:inline-block!important;letter-spacing:0!important;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold!important;text-transform:none;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
+.rz-btns-stacked a,.rz-btns-stacked .rzBtn{display:block!important;;margin-bottom:6px;text-decoration:none}
 .rzBtn:hover{background:#eee!important;border-color:#ccc;color:#000!important;text-decoration:none}
 .rzBtn-sm{font-size:14px!important;padding:5px 10px!important}
 .rzBtn-xs{font-size:12px!important;padding:3px 6px!important}
