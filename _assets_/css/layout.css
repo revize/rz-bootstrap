@@ -506,7 +506,7 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 .rzBtn-sm{font-size:14px!important;padding:5px 10px!important}
 .rzBtn-xs{font-size:12px!important;padding:3px 6px!important}
 .user-logged-in .yes-has-edit-buttons{position:relative;outline:3px solid transparent;outline-offset:6px}
-.user-logged-in .yes-has-edit-buttons:hover,.user-logged-in.show-edit-buttons .yes-has-edit-buttons{outline:3px solid #6000fe;outline-offset:3px;z-index:999!important;transition:all .2s;min-width:142px;min-height:48px}
+.user-logged-in .yes-has-edit-buttons:hover,.user-logged-in.show-edit-buttons .yes-has-edit-buttons{outline:3px solid #6000fe;outline-offset:3px;z-index:999!important;transition:all .2s;min-width:142px;min-height:32px}
 .user-logged-in .yes-has-edit-buttons:hover .rz-btns-container:has(.rzBtn),
 .user-logged-in.show-edit-buttons .yes-has-edit-buttons .rz-btns-container:has(.rzBtn){opacity:1;height:auto;transform:translateY(0);opacity:1}
 .hide-edit-btns .rz-btns-container{display:none}
