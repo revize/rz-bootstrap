@@ -411,17 +411,5 @@
 <script src="_assets_/plugins/revizeWeather/js/revizeWeather.min.js"></script>
 <script src="_assets_/js/scripts.js"></script>
 
-<script src="https://www.cssscript.com/demo/interactive-app-tour-guide/dist/tour.js"></script>
-<link rel="stylesheet" href="https://www.cssscript.com/demo/interactive-app-tour-guide/dist/css/tour.min.css">
-<script>
-  const tg = new tourguide.TourGuideClient()
-
-	function openTour(){
-	  tg.start()
-  }
-  
-</script>
-
-
 </body>
 </html>
