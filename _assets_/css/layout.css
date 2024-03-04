@@ -461,9 +461,10 @@ a.button:active,
 #post button::-moz-focus-inner,
 #post input::-moz-focus-inner{border:0;padding:0}
 
+
 /* -----------------------------------------
 
-#revize edit buttons and bar
+#revize edit buttons DO NOT MODIFY
 
 -----------------------------------------*/
 /* ----------------------------------------- #helpers and positioning for revize buttons -----------------------------------------*/
@@ -472,7 +473,7 @@ a.button:active,
 .user-logged-in{box-shadow: 0 0 10px rgba(21,0,56,0);padding:14px}
 
 /* default position for revize buttons is top right DO NOT WRAP - Check Below for other positioning */
-.rz-btns-container{line-height:1.5!important;font-size:16px;opacity:0;background:#fff;padding:6px;box-shadow:0px 2px 10px rgba(21, 0, 56, 0.08);border:1px solid rgba(21, 0, 56,.1);transform:translateY(10px);transition:all .2s;z-index:999;position:absolute;top:0;right:0}
+.rz-btns-container{line-height:1.5!important;font-size:16px;opacity:0;background:#fff;padding:4px;box-shadow:0px 2px 10px rgba(21, 0, 56, 0.08);border:1px solid rgba(21, 0, 56,.1);transform:translateY(10px);transition:all .2s;z-index:999;position:absolute;top:0;right:0}
 
 /* 
 to reposition '.rz-btns-container' WRAP IT IN A DIV WITH ONE OF THE CLASSES BELOW
@@ -484,7 +485,7 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 .center-top .rz-btns-container{position:relative!important}
 .right-center{top:50%!important;right:0!important;transform:translate(0, -50%)!important;z-index:99;position:absolute}
 .right-center .rz-btns-container{position:relative!important}
-.right-bottom{top:auto!important;right:0!important;bottom:0!important;z-index:999;position:absolute}
+.right-bottom{top:auto!important;right:0!important;bottom:0!important;z-index:99;position:absolute}
 .right-bottom .rz-btns-container{position:relative!important}
 .center-bottom{top:auto!important;right:50%!important;bottom:0!important;transform:translateX(50%)!important;z-index:99;position:absolute}
 .center-bottom .rz-btns-container{position:relative!important}
@@ -496,15 +497,38 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 .left-center .rz-btns-container{position:relative!important}
 
 /* ----------------------------------------- rzBtn's -----------------------------------------*/
-.rzBtn{cursor:pointer;text-decoration:none;position:relative;z-index:999;line-height:1.5!important;display:inline-block!important;letter-spacing:0;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold;text-transform:none;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
+.rz-btns-container a{display:inline-block!important}
+.rzBtn{text-transform:capitalize;cursor:pointer;text-decoration:none;position:relative;z-index:99;line-height:1.5!important;display:inline-block!important;letter-spacing:0!important;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold;text-transform:none;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
 .rzBtn:hover{background:#eee!important;border-color:#ccc;color:#000!important;text-decoration:none}
 .rzBtn-sm{font-size:14px!important;padding:5px 10px!important}
 .rzBtn-xs{font-size:12px!important;padding:3px 6px!important}
-.user-logged-in .yes-has-edit-buttons{position:relative;z-index:9;outline:3px solid transparent;outline-offset:6px}
-.user-logged-in .yes-has-edit-buttons:hover,.user-logged-in.show-edit-buttons .yes-has-edit-buttons{outline:3px solid #6000fe;outline-offset:3px;z-index:999;transition:all .2s;min-width:142px;min-height:48px}
+.user-logged-in .yes-has-edit-buttons{position:relative;outline:3px solid transparent;outline-offset:6px}
+.user-logged-in .yes-has-edit-buttons:hover,.user-logged-in.show-edit-buttons .yes-has-edit-buttons{outline:3px solid #6000fe;outline-offset:3px;z-index:999!important;transition:all .2s;min-width:142px;min-height:48px}
 .user-logged-in .yes-has-edit-buttons:hover .rz-btns-container:has(.rzBtn),
 .user-logged-in.show-edit-buttons .yes-has-edit-buttons .rz-btns-container:has(.rzBtn){opacity:1;height:auto;transform:translateY(0);opacity:1}
 .hide-edit-btns .rz-btns-container{display:none}
+
+/*purple buttons*/
+.purple-edit-buttons .rz-btns-container{background:#6000fe;border:1px solid #6000fe}
+.purple-edit-buttons .rzBtn{background:#6000fe!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
+.purple-edit-buttons .rzBtn:hover{background:#4c00ca!important;border-color:rgba(255,255,255,.25);color:#fff!important}
+
+/*black buttons*/
+.black-edit-buttons .user-logged-in.show-edit-buttons .yes-has-edit-buttons,
+.black-edit-buttons .user-logged-in .yes-has-edit-buttons:hover{outline-color:#000}
+.black-edit-buttons .rz-btns-container{background:#000;border:1px solid #000}
+.black-edit-buttons .rzBtn{background:#000!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
+.black-edit-buttons .rzBtn:hover{background:#000!important;border-color:rgba(255,255,255,.25);color:#fff!important}
+
+/*blue buttons*/
+.blue-edit-buttons .user-logged-in.show-edit-buttons .yes-has-edit-buttons,
+.blue-edit-buttons .user-logged-in .yes-has-edit-buttons:hover{outline-color:#0000ff}
+.blue-edit-buttons .rz-btns-container{background:#0000ff;border:1px solid #0000ff}
+.blue-edit-buttons .rzBtn{background:#0000ff!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
+.blue-edit-buttons .rzBtn:hover{background:#0000dc!important;border-color:rgba(255,255,255,.25);color:#fff!important}
+
+/*hide outline options*/
+.hide-outlines .yes-has-edit-buttons{outline:none!important}
 
 /* ----------------------------------------- #tooltip -----------------------------------------*/
 .tooltip{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important;font-style:normal!important;font-weight:400!important;line-height:1.5!important;text-align:left!important;text-align:start!important;text-decoration:none!important;text-shadow:none!important;text-transform:none!important;letter-spacing:normal!important;word-break:normal!important;word-spacing:normal!important;white-space:normal!important;line-break:auto!important;font-size:1rem!important;opacity:0;z-index:999999999999}

@@ -12,18 +12,25 @@
 	'use strict';
 
 	var $window = $(window),
-		$body = $('body'),
-		$html = $('html');
+	$body = $('body'),
+	$html = $('html'),
+	$rzBarWrap = $('#rz-bar-wrap'),
+	$rzBtnsContainer = $('.rz-btns-container');
 
-
-	// RZ Class
+	// RZ Class + remove revize bar
 	if(typeof RZ !== "undefined"){
 		if(RZ.login){
-			$html.addClass("user-logged-in");
+			$body.addClass("user-logged-in");
 		} else{
-			$html.addClass("user-not-logged-in");
+			$body.addClass("user-not-logged-in");
+			// remove revize bar 
+			$rzBarWrap.remove();
+			$rzBtnsContainer.remove();
 		}
 	}
+	
+	// needed for revize bar
+	$('[data-toggle="tooltip"]').tooltip({trigger:"hover"})
 
 	$(window).on("scroll", function() {
 		if($(window).scrollTop() > 0) {
@@ -75,8 +82,7 @@
 	});
 
 	// for revize buttons container
-	$(".rz-btns-container .rzBtn").each(function(){ 
-		var $rzBtnsContainer = $(this);
+	$rzBtnsContainer.each(function(){ 
 		if($rzBtnsContainer.html().trim()==""){
 			$rzBtnsContainer.closest(".has-edit-buttons").removeClass("has-edit-buttons");
 		} else {
