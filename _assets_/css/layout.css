@@ -510,28 +510,6 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 .user-logged-in.show-edit-buttons .yes-has-edit-buttons .rz-btns-container:has(.rzBtn){opacity:1;height:auto;transform:translateY(0);opacity:1}
 .hide-edit-btns .rz-btns-container{display:none}
 
-/*purple buttons*/
-.purple-edit-buttons .rz-btns-container{background:#6000fe;border:1px solid #6000fe}
-.purple-edit-buttons .rzBtn{background:#6000fe!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
-.purple-edit-buttons .rzBtn:hover{background:#4c00ca!important;border-color:rgba(255,255,255,.25);color:#fff!important}
-
-/*black buttons*/
-.black-edit-buttons .user-logged-in.show-edit-buttons .yes-has-edit-buttons,
-.black-edit-buttons .user-logged-in .yes-has-edit-buttons:hover{outline-color:#000}
-.black-edit-buttons .rz-btns-container{background:#000;border:1px solid #000}
-.black-edit-buttons .rzBtn{background:#000!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
-.black-edit-buttons .rzBtn:hover{background:#000!important;border-color:rgba(255,255,255,.25);color:#fff!important}
-
-/*blue buttons*/
-.blue-edit-buttons .user-logged-in.show-edit-buttons .yes-has-edit-buttons,
-.blue-edit-buttons .user-logged-in .yes-has-edit-buttons:hover{outline-color:#0000ff}
-.blue-edit-buttons .rz-btns-container{background:#0000ff;border:1px solid #0000ff}
-.blue-edit-buttons .rzBtn{background:#0000ff!important;border:1px solid rgba(255,255,255,.25);color:#fff!important}
-.blue-edit-buttons .rzBtn:hover{background:#0000dc!important;border-color:rgba(255,255,255,.25);color:#fff!important}
-
-/*hide outline options*/
-.hide-outlines .yes-has-edit-buttons{outline:none!important}
-
 /* ----------------------------------------- #tooltip -----------------------------------------*/
 .tooltip{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important;font-style:normal!important;font-weight:400!important;line-height:1.5!important;text-align:left!important;text-align:start!important;text-decoration:none!important;text-shadow:none!important;text-transform:none!important;letter-spacing:normal!important;word-break:normal!important;word-spacing:normal!important;white-space:normal!important;line-break:auto!important;font-size:1rem!important;opacity:0;z-index:999999999999}
 .tooltip-inner{max-width:280px!important;padding:.5rem 1rem!important;color:#fff!important;text-align:center!important;background-color:#000!important;border-radius:4px!important;font-size:16px!important}
