@@ -500,7 +500,7 @@ top-left,top-center,right-center,right-bottom,center-bottom,center-center,bottom
 
 /* ----------------------------------------- rzBtn's -----------------------------------------*/
 .rz-btns-container a{display:inline-block!important}
-.rzBtn{text-transform:capitalize;cursor:pointer;text-decoration:none;position:relative;z-index:99;line-height:1.5!important;display:inline-block!important;letter-spacing:0!important;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold!important;text-transform:none;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
+.rzBtn{text-transform:capitalize;cursor:pointer;text-decoration:none;position:relative;z-index:99;line-height:1.5!important;display:inline-block!important;letter-spacing:0!important;padding:7px 14px;background:#fff!important;color:#000!important;font-weight:bold!important;font-size:16px;white-space:nowrap;text-align:center;border:1px solid #e6e6e6;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important}
 .rz-btns-stacked a,.rz-btns-stacked .rzBtn{display:block!important;margin-bottom:6px;text-decoration:none}
 .rzBtn:hover{background:#eee!important;border-color:#ccc;color:#000!important;text-decoration:none}
 .rzBtn-sm{font-size:14px!important;padding:5px 10px!important}
